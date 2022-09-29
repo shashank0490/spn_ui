@@ -1,0 +1,55 @@
+<div class="container-fluid mb-4" style="background-color: #DFE2D7;">
+    <div style="height: 700px">
+        <div class="row" >
+            <div class="w-100 d-flex justify-content-center my-3">
+                <div class="row w-50">
+                    <div class="row">
+                        <div class="col-2 d-flex justify-content-end  align-items-center">
+                            <img style="cursor: pointer;" routerLink="/user-profile" class="img-fluid img-class-arrow "
+                                src="/assets/images/leftarrow.svg">
+                        </div>
+                        <div class="col-10">
+                            <h4>User Profile</h4>
+                            <p class="text-secondary fs-14">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ad
+                                magni dolorum aut voluptate dolore, fugiat iste qui commodi nisi cum!</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <div class="w-100 d-flex justify-content-center " >
+            <div class="card" style="width: 41rem;">
+                <div class="card-body ">
+                    <div class="row fixed-container">
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item" *ngFor="let item of users">
+                                <div class="row  mb-2 align-items-center">
+                                    <div class="col-3 text-end">
+                                        <img class="" height="80px" [src]="item.file?item.file:'/assets/images/default-image.png'" alt="">
+                                    </div>
+                                    <div class="col-9" style="line-height: 0.5rem;">
+                                        <span>
+                                            <p class="text-bold">{{item.firstName}}</p>
+                                            <span class="text-muted" style="font-size: 12px;">{{item.emailId}}</span>
+                                        </span>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="row ">
+                        <div class="col-4">
+                            <button  (click)="openAddUserDialog()" type="submit" class="btn btn-primary py-3 text-white w-100 mt-3">
+                                Invite Users
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+</div>

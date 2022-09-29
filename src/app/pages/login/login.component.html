@@ -1,0 +1,66 @@
+<section>
+    <!-- <nav class="navbar navbar-expand-lg navbar-light">
+        <div class="container">
+            <div><img src="/assets/images/sattvalogo.png" alt=""></div>
+            <div class="text-end">
+            <span style="font-size:12px;">Questions</span>
+            <p style="font-size:12px;">for 24/7 help <a class="text-decoration-none text-primary" href="#">Contact Us</a></p>
+            </div>
+        </div>
+    </nav> -->
+    <div class="d-flex justify-content-center align-items-center px-4 page-center">
+        <div class="d-flex main-card flex-md-row flex-column main-container p-5">
+            <div class="w-100">
+                <h5 class="fw-bold rubik spn-portal">Sign to SPN portal</h5>
+                <p class="rubik" style="font-size:11px;">Hey, Lorem Ipsum is simply dummy text of the printing and typesetting industry</p>
+                <form [formGroup]="loginForm" autocomplete="off">
+                    <div class="mb-2 position-relative">
+                        <img src="/assets/images/email.svg" alt="Email" class="front">
+                        <input type="email" class="form-control" id="exampleInputEmail1" 
+                        aria-describedby="emailHelp" formControlName="emailId"
+                        placeholder="Enter Email" autocomplete="email">
+                        <div *ngIf="(loginFormControl.emailId.invalid || submitted) && (loginFormControl.emailId.dirty || loginFormControl.emailId.touched)">
+                            <div  *ngIf="loginFormControl.emailId.errors?.required" class="text-danger error-text" role="alert">Email is required</div>
+                            <div *ngIf="loginFormControl.emailId.errors?.pattern" class="text-danger error-text" role="alert">Invalid Email</div>
+                          </div>
+                    </div>
+                    <div class="mb-2 eye">
+                        <img src="/assets/images/pass.svg" alt="Password" class="front">
+                        <input [type]="!this.show?'password':'text'" class="form-control" 
+                        id="exampleInputPassword1"
+                        formControlName="password"
+                        placeholder="Enter Password"
+                        autocomplete="new-password">
+                        <button class="eye-icon d-flex align-items-center" (click)="showPassword()">
+                            <img src="{{show ? '/assets/images/show.svg' : '/assets/images/hide.svg'}}" alt=""></button>
+                        <span class="text-danger error-text" *ngIf="(loginFormControl.password.touched 
+                            || submitted) && loginFormControl.password.errors?.required">
+                            Enter a valid Password
+                        </span>
+                    </div>
+                    <button type="submit" class="btn text-white btn-lg btn-primary w-100" [disabled]="loginForm.invalid" [ngClass]="{'bg-secondary':loginForm.invalid,'bg-primary':loginForm.valid}" (click)="login()" style="height: 48px;">Log in</button>
+                </form>
+                <div class="w-100 text-center mt-2"><a class="text-primary text-decoration-none forget-pss" routerLink="/forgot-password">Forgotten Password?</a></div>
+                <hr>
+                <div class="w-100 text-center create-acc mt-2"><span >Do not have an Account? </span> <a class="text-primary fw-bold" routerLink="/registration">Create Now</a></div>
+                <!-- <div class="strike my-1">
+                    </div>
+                    <div class="d-flex justify-content-center">
+                    <button class="btn btn-outline-secondary rounded-pill">
+                        <span class="fw-bold">
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M4.43242 12.0862L3.73625 14.6852L1.19176 14.739C0.431328 13.3286 0 11.7148 0 10C0 8.34176 0.403281 6.77801 1.11812 5.40109H1.11867L3.38398 5.8164L4.37633 8.06812C4.16863 8.67363 4.05543 9.32363 4.05543 10C4.05551 10.7341 4.18848 11.4374 4.43242 12.0862Z" fill="#FBBB00"/>
+                                <path d="M19.8252 8.13188C19.94 8.7368 19.9999 9.36153 19.9999 10C19.9999 10.7159 19.9246 11.4143 19.7812 12.0879C19.2944 14.3802 18.0224 16.3819 16.2604 17.7984L16.2598 17.7978L13.4065 17.6522L13.0027 15.1313C14.1719 14.4456 15.0857 13.3725 15.567 12.0879H10.2197V8.13188H15.645H19.8252Z" fill="#518EF8"/>
+                                <path d="M16.2598 17.7978L16.2603 17.7984C14.5466 19.1758 12.3697 20 9.99989 20C6.19165 20 2.88067 17.8714 1.19165 14.739L4.43231 12.0863C5.27681 14.3401 7.45099 15.9445 9.99989 15.9445C11.0955 15.9445 12.1219 15.6484 13.0026 15.1313L16.2598 17.7978Z" fill="#28B446"/>
+                                <path d="M16.383 2.30219L13.1434 4.95437C12.2319 4.38461 11.1544 4.05547 10 4.05547C7.39344 4.05547 5.17859 5.73348 4.37641 8.06812L1.11871 5.40109H1.11816C2.78246 2.1923 6.1352 0 10 0C12.4264 0 14.6511 0.864297 16.383 2.30219Z" fill="#F14336"/>
+                                </svg>                                
+                        </span> Login with Google
+                    </button>
+                    </div> -->
+            </div>
+            <div class="w-100 d-md-flex d-none justify-content-center">
+                <img src="/assets/images/login-image.png" alt="" class="img-fluid">
+            </div>
+        </div> 
+    </div>       
+</section>

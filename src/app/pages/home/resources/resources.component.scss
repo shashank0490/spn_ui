@@ -1,0 +1,89 @@
+@import "src/scss/functions";
+
+@import "src/scss/variables";
+
+@import "src/scss/mixins";
+
+.resourceLeft::before {
+  position: absolute;
+  content: "";
+  width: 415px;
+  height: 415px;
+  background: #ebf3ee;
+  border-radius: 100%;
+  z-index: -2;
+  left: 8rem;
+
+  top: 6rem;
+}
+.resourceLeft::after {
+  position: absolute;
+  content: "";
+  width: 429px;
+  height: 429px;
+  border-radius: 100%;
+  z-index: -1;
+  border: 1px solid #507b5e;
+  bottom: auto;
+
+  top: 6rem;
+
+  left: 95px;
+  opacity: 0.2;
+}
+.resourceRight::after {
+  position: absolute;
+  content: "";
+  background: url(../../../../assets/images/dots-big.png) no-repeat;
+  height: 200px;
+  width: 500px;
+  right: 0%;
+  top: -5rem;
+}
+.resourceRight::before {
+  position: absolute;
+  content: "";
+  background: url(../../../../assets/images/dots-big.png) no-repeat;
+  height: 200px;
+  width: 500px;
+  right: 0%;
+  bottom: -23%;
+}
+.resourceRight::before {
+  position: absolute;
+  content: "";
+  background: url(../../../../assets/images/dots-big.png) no-repeat;
+  height: 200px;
+  width: 500px;
+  left: -7%;
+  top: 60%;
+  z-index: -2;
+}
+.card1 {
+  width: 16rem;
+  height: 275px;
+  padding: 0px 16px;
+  background-color: #f3e0ad;
+  border: none;
+}
+
+.card2 {
+  width: 14rem;
+  height: 135px;
+  background-color: #159a3a;
+}
+
+.card3 {
+  width: 14rem;
+  height: 135px;
+  background-color: #8a6e0a;
+  border: none;
+}
+
+.card4 {
+  width: 15rem;
+  height: 225px;
+  padding: 10px 0px 10px 15px;
+  background-color: #c5dcff;
+  border: none;
+}

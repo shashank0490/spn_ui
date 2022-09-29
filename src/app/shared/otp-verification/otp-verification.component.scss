@@ -1,0 +1,14 @@
+input.ng-pristine{
+    padding-right: calc(1.5em + 0.75rem);
+    background-image: url(/assets/images/otp-close.svg);
+    background-repeat: no-repeat;
+    background-position: right calc(0.375em + 0.1875rem) center;
+    background-size: calc(1em + 0.375rem) calc(1em + 0.375rem);
+}
+
+:host ::ng-deep mat-dialog-container {
+    border-radius: 22px !important;
+}
+::ng-deep .cdk-overlay-dark-backdrop {
+backdrop-filter: blur(4px);
+}

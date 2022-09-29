@@ -1,0 +1,137 @@
+<h1>Page Under Construction</h1>
+<section class="bg-white" *ngIf="false">
+  <div class="container">
+    <div class="row mx-5 py-5">
+      <div
+        class="col-12 order-2 order-md-1 col-md-6 mt-3 mt-md-0 d-flex align-items-center justify-content-center"
+      >
+        <div class="pe-5">
+          <h1>
+            Some heading related
+            <strong>events goes here</strong>
+          </h1>
+          <p>
+            One stop platform to address all your needs. Join us today to learn
+            more about SPN.
+          </p>
+          <div class="d-flex align-items-center">
+            <button type="button" class="btn btn-primary py-3 px-4 text-white">
+              View Upcoming Events
+            </button>
+            <button type="button" class="btn fw-bold">View Past Events</button>
+          </div>
+        </div>
+      </div>
+      <div class="col-12 order-1 order-md-2 col-md-6">
+        <div class="img-placeholder">
+          <img
+            src="/assets/images/placeholder.jpg"
+            class="img-fluid asset mr-4"
+            alt=""
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="mt-5" *ngIf="false">
+    <div class="container">
+        <div class="row mx-5 mb-3">
+            <div class="col-6 search-bar position-relative">
+                <img src="/assets/images/search.svg" alt="" class="search">
+                <input class="form-control me-5" type="search" placeholder="Search" aria-label="Search" style="width: 70%;">
+                
+            </div>
+            <div class="col-6 d-flex justify-content-end">
+                <div class="d-flex">
+                    <div class="dropdown">
+                        <a class="btn bg-white text-black dropdown-toggle ps-s py-3 pe-5" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
+                          <span class="me-2">
+                            <svg width="16" height="10" viewBox="0 0 16 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M0 10H5.33333V8.33333H0V10ZM0 0V1.66667H16V0H0ZM0 5.83333H10.6667V4.16667H0V5.83333Z" fill="#4A4A4A"/>
+                            </svg>                                
+                          </span> Filter
+                        </a>
+                      
+                        <ul class="dropdown-menu p-2" aria-labelledby="dropdownMenuLink" >
+                          <li class="d-flex justify-content-between mb-2" *ngFor="let item of filter; let i = index">
+                                <div class="d-flex">
+                                    <input class="form-check-input me-2" type="checkbox" name="item.filterKey" [(ngModel)]=item.isChecked id="flexCheckChecked">
+                                <span>{{item.filterKey}}</span>
+                                </div>
+                                    <span class="ms-3">
+                                        <svg width="8" height="14" viewBox="0 0 12 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M2 2L9 9L2 16" stroke="#0A9437" stroke-width="3"/>
+                                        </svg>   
+                                    </span>                                     
+                                <ul class="dropdown-menu dropdown-submenu p-2">
+                                    <li class="mb-2" *ngFor="let subMenu of item.subMenu;">
+                                        <input class="form-check-input me-1" type="checkbox" [(ngModel)]=subMenu.isChecked id="flexCheckChecked">
+                                        {{subMenu.subFilterKey}}
+                                    </li>
+                                </ul>
+                          </li>
+                          <!-- <li>
+                                <input class="form-check-input me-1" type="checkbox" value="" id="flexCheckChecked" checked>
+                                Sort by location
+                          </li>
+                          <li>
+                                <input class="form-check-input me-1" type="checkbox" value="" id="flexCheckChecked" checked>
+                                Event Category
+                          </li> -->
+            </ul>
+          </div>
+
+          <div class="btn-group ms-3" role="group" aria-label="Basic example">
+            <button
+              type="button"
+              class="btn"
+              [ngClass]="mode == 'list' ? 'btn-active' : 'btn-pending'"
+              (click)="switchTab('list')"
+            >
+              <!-- <svg width="16" height="13" viewBox="0 0 16 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M4.41422 0H1.08578C0.487062 0 0 0.487063 0 1.08578V4.41422C0 5.01294 0.487062 5.5 1.08578 5.5H4.41422C5.01294 5.5 5.5 5.01294 5.5 4.41422V1.08578C5.5 0.487063 5.01294 0 4.41422 0Z" fill="#4A4A4A"/>
+                                    <path d="M15.5 2.5H7.5C7.22387 2.5 7 2.27613 7 2C7 1.72387 7.22387 1.5 7.5 1.5H15.5C15.7761 1.5 16 1.72387 16 2C16 2.27613 15.7761 2.5 15.5 2.5Z" fill="#4A4A4A"/>
+                                    <path d="M12.75 4.375H7.5C7.22387 4.375 7 4.15113 7 3.875C7 3.59887 7.22387 3.375 7.5 3.375H12.75C13.0261 3.375 13.25 3.59887 13.25 3.875C13.25 4.15113 13.0261 4.375 12.75 4.375Z" fill="#4A4A4A"/>
+                                    <path d="M4.41422 7.25H1.08578C0.487062 7.25 0 7.73706 0 8.33578V11.6642C0 12.2629 0.487062 12.75 1.08578 12.75H4.41422C5.01294 12.75 5.5 12.2629 5.5 11.6642V8.33578C5.5 7.73706 5.01294 7.25 4.41422 7.25Z" fill="#4A4A4A"/>
+                                    <path d="M15.5 9.625H7.5C7.22387 9.625 7 9.40113 7 9.125C7 8.84887 7.22387 8.625 7.5 8.625H15.5C15.7761 8.625 16 8.84887 16 9.125C16 9.40113 15.7761 9.625 15.5 9.625Z" fill="#4A4A4A"/>
+                                    <path d="M12.75 11.625H7.5C7.22387 11.625 7 11.4011 7 11.125C7 10.8489 7.22387 10.625 7.5 10.625H12.75C13.0261 10.625 13.25 10.8489 13.25 11.125C13.25 11.4011 13.0261 11.625 12.75 11.625Z" fill="#4A4A4A"/>
+                                    </svg>                                     -->
+              <img src="/assets/images/list.svg" alt="" />
+            </button>
+            <button
+              type="button"
+              class="btn"
+              [ngClass]="mode == 'grid' ? 'btn-active' : 'btn-pending'"
+              (click)="switchTab('grid')"
+            >
+              <!-- <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M5.168 0H1.76533C0.790367 0 0 0.790367 0 1.76533V5.168C0 6.14297 0.790367 6.93333 1.76533 6.93333H5.168C6.14297 6.93333 6.93333 6.14297 6.93333 5.168V1.76533C6.93333 0.790367 6.14297 0 5.168 0Z" fill="#0A9437"/>
+                                    <path d="M14.2347 0H10.832C9.85702 0 9.06665 0.790367 9.06665 1.76533V5.168C9.06665 6.14297 9.85702 6.93333 10.832 6.93333H14.2347C15.2096 6.93333 16 6.14297 16 5.168V1.76533C16 0.790367 15.2096 0 14.2347 0Z" fill="#0A9437"/>
+                                    <path d="M5.168 9.06665H1.76533C0.790367 9.06665 0 9.85702 0 10.832V14.2347C0 15.2096 0.790367 16 1.76533 16H5.168C6.14297 16 6.93333 15.2096 6.93333 14.2347V10.832C6.93333 9.85702 6.14297 9.06665 5.168 9.06665Z" fill="#0A9437"/>
+                                    <path d="M12.5333 16C14.4479 16 16 14.4479 16 12.5333C16 10.6187 14.4479 9.06665 12.5333 9.06665C10.6187 9.06665 9.06665 10.6187 9.06665 12.5333C9.06665 14.4479 10.6187 16 12.5333 16Z" fill="#0A9437"/>
+                                    </svg>                                     -->
+              <img src="/assets/images/grid.svg" alt="" />
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+     <ng-container *ngIf="mode=='list'">
+      <div class="col-12 mt-4 mb-2" *ngFor="let item of eventsList; let i = index" (click)="onNaviagte(i)">
+        <app-card [data]="item" [viewMode]="mode" class="mb-3" style="cursor: pointer;"></app-card>
+      </div>
+     </ng-container>
+     <ng-container *ngIf="mode=='grid'">
+      <div class="col-md-4 col-12 mt-4 mb-2" *ngFor="let item of eventsList; let i = index" (click)="onNaviagte(i)">
+        <app-card [data]="item" [viewMode]="mode" class="mb-3" style="cursor: pointer;"></app-card>
+      </div>
+     </ng-container>
+      <!-- <app-card *ngFor="let item of eventsList" [data]="item" [viewMode]="mode" class="mb-3"></app-card> -->
+    </div>
+  </div>
+</section>
+<div class="container mx-auto">
+    <!-- <app-pagination></app-pagination> -->
+</div>

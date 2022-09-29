@@ -1,0 +1,169 @@
+.page-center{
+    max-width: 1280px;
+    margin: 0 auto;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.main-container{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #ffffff;
+    box-shadow: 0px 17px 74px rgb(0 0 0 / 13%);
+    border-radius: 20px;
+    padding: 45px 45px 25px;
+    max-width: 880px;
+    margin: 30px auto 0;
+    position: relative;
+}
+
+.main-container:before{
+    position: absolute;
+    content: "";
+    width: 415px;
+    height: 415px;
+    background: #c2d2bc;
+    border-radius: 100%;
+    z-index: -1;
+    bottom: auto;
+    top: 30px;
+    left: -179px;
+    opacity: 0.2;
+}
+
+.main-container:after{
+    position: absolute;
+    content: "";
+    width: 400px;
+    height: 200px;
+    background: url(/assets/images/dots-big.png) repeat;
+    bottom: -28%;
+    right: -32%;
+    z-index: -1;
+}
+
+
+.front{
+    position: absolute;
+    left: 20px;
+    top: 16px;
+}
+
+.strike{
+
+    display: block;
+    text-align: center;
+    overflow: hidden;
+    white-space: nowrap; 
+
+    > span {
+
+        position: relative;
+        display: inline-block;
+
+        &:before,
+        &:after {
+            content: "";
+            position: absolute;
+            top: 50%;
+            width: 9999px;
+            height: 1px;
+            background: rgb(82, 80, 80);
+        }
+
+        &:before {
+            right: 100%;
+            margin-right: 15px;
+        }
+
+        &:after {
+            left: 100%;
+            margin-left: 15px;
+        }
+    }
+}
+
+input {
+    border: 1px solid #d7d7d7;
+    border-radius: 4px;
+    height: 48px;
+    margin-bottom: 15px;
+    padding: 5px 10px 5px 42px;
+    &.ng-invalid.ng-touched {
+      border: 1.5px solid #dc3545;
+    }
+    &.ng-valid.ng-touched {
+      border: 1.5px solid rgb(41, 163, 25);
+    }
+  }
+
+  input.ng-valid.ng-dirty {
+    padding-right: calc(1.5em + 0.75rem);
+    background-image: url(/assets/images/check-icon.svg);
+    background-repeat: no-repeat;
+    background-position: right calc(0.375em + 0.1875rem) center;
+    background-size: calc(0.75em + 0.375rem) calc(0.75em + 0.375rem);
+  }
+  
+  input.ng-invalid.ng-dirty {
+    padding-right: calc(1.5em + 0.75rem);
+    background-image: url(/assets/images/close.svg);
+    background-repeat: no-repeat;
+    background-position: right calc(-9.925em + 0.1875rem) center;
+    background-size: 100%;
+  }
+  .card{
+    border-radius: 20px;
+  }
+
+  @media (min-width: 320px) and (max-width: 425px) { 
+    .main-card{
+      padding: 30px !important;
+    }
+  }
+
+  @media (min-width: 320px) and (max-width: 374.98px) { 
+    .spn-portal{
+      font-size: 18px;
+    }
+}
+
+@media (min-width: 425px) and (max-width: 575.98px) { 
+  .create-acc{
+    font-size:14px ;
+  }
+}
+@media (min-width: 320px) and (max-width: 424.98px) { 
+  .create-acc{
+    font-size:12px ;
+  }
+}
+
+@media (min-width: 320px) and (max-width: 424.98px) { 
+  .forget-pss{
+    font-size:14px ;
+  }
+}
+
+  @media (min-width: 768px) and (max-width: 991.98px) { 
+      .main-container:after{
+        right: -9%;
+      }
+  }
+  @media (min-width: 576px) and (max-width: 767.98px) { 
+    .main-container:after{
+      right: -3%;
+    }
+}
+@media (min-width: 320px) and (max-width: 425px) { 
+  .main-container:after{
+    right: -8%;
+  }
+}
+
+@media (min-width: 320px) and (max-width: 566.98px) { 
+  .eye button{
+    right: 12px;
+  }
+}

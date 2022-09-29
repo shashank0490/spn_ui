@@ -1,0 +1,100 @@
+<div class="container-fluid mb-4" style="background-color: #DFE2D7;">
+    <div style="height: 700px">
+        <div class="row">
+            <div class="w-100 d-flex justify-content-center my-3">
+            <div class="row w-50">
+                    <div class="row">
+                        <div class="col-1 d-flex justify-content-end  align-items-center">
+                            <img  style="cursor: pointer;"  routerLink="/user-profile" class="img-fluid img-class-arrow " src="/assets/images/leftarrow.svg" >
+                        </div>
+                        <div class="col-11">
+                            <h4>Personal Details</h4>
+                            <p class="text-secondary fs-14">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ad magni dolorum aut voluptate dolore, fugiat iste qui commodi nisi cum!</p>
+                        </div>
+                        </div>
+
+                </div>
+            </div>
+            </div>
+            <div class="w-100 d-flex justify-content-center ">
+                <div class="card" style="width: 50rem;">
+                    <div class="card-body mt-3 ">
+                        <div class="row">
+                            <div class="col-3">
+                                <div class="position-relative">
+                                <img class="position-relative border image-cropper"  [src]="imageFile?imageFile:'/assets/images/default-image.png'" alt="">
+                                <input type="file" id="description-upload" accept=".png,.jpg,.jpeg" class="form-control d-none"
+                                (change)="docsInputChangeHandler($event)">
+                                <img (click)="imageInputClickHandler($event)" style="cursor: pointer" class="img-fluid img-select position-absolute" src="/assets/images/select-image.png" >
+                                </div>
+                            </div>
+                            <div class="col-9 row">
+                                <form class=" col-11 p-4" [formGroup]="profileForm">
+                                      <div class="form-floating mb-2">
+                                        <input appAlphabetOnly type="text" class="form-control" id="floatingInput" aria-describedby="emailHelp" appAlphabetOnly 
+                                        placeholder="Full Name*" formControlName="firstName" maxlength="35">
+                                        <label for="floatingInput">Full Name</label>
+                                        <div *ngIf="(profileFormControl.firstName.invalid) && (profileFormControl.firstName.dirty || profileFormControl.firstName.touched)" class="text-danger error-text" role="alert">
+                                          <div  *ngIf="profileFormControl.firstName.errors?.required" class="text-danger error-text" role="alert">Full Name is required</div>
+                                        </div>
+                                      </div>
+                                      <div class="form-floating mb-3">
+                                        <select class="form-select" id="floatingSelect" aria-label="Floating label select example" formControlName="designationId">
+                                          <option *ngFor="let item of designations" [value]="item['id']">{{item['name']}}</option>
+                                        </select>
+                                        <label for="floatingSelect">Designation</label>
+                                        <div *ngIf="(profileFormControl.designationId.invalid ) && (profileFormControl.designationId.dirty || profileFormControl.designationId.touched)" class="text-danger error-text" role="alert">
+                                          Please select a designation
+                                        </div>
+                                      </div>
+                                      <div class="form-floating mb-3">
+                                        <input type="email" class="form-control" id="floatingInput"  aria-describedby="emailHelp"
+                                        placeholder="Enter Personal Email ID" formControlName="emailId" readonly>
+                                        <label for="floatingInput">Enter Personal Email ID</label>
+                                        <div *ngIf="(profileFormControl.emailId.invalid) && (profileFormControl.emailId.dirty || profileFormControl.emailId.touched)">
+                                          <div  *ngIf="profileFormControl.emailId.errors?.required" class="text-danger error-text" role="alert">Email is required</div>
+                                          <div *ngIf="profileFormControl.emailId.errors?.pattern" class="text-danger error-text" role="alert">Invalid Email</div>
+                                        </div>     
+                                      </div>
+
+                                      <div class="form-floating contact">
+                                        <div class="form-group mb-3 d-flex" formGroupName="contactNo">
+                                          <!-- <label for="contactNo">Contact Number</label> -->
+                                          <select class="rounded country-code px-2 text-success fw-bold"id="floatingSelect" id="contact" style="width: 90px !important;" aria-label="Floating label select example" formControlName="countryCode" >
+                                            <option *ngFor="let item of countryCodes"  [value]="item.dial_code">{{item['dial_code']}}</option>
+                                          </select>
+                                          <div class="form-floating mb-3">
+                                            <input  pattern="^[6-9]\d{9}$" onKeyPress="if(this.value.length==10) return false;" formControlName="number" type="number" class="form-control border-0 px-0" id="ec-mobile-number" aria-describedby="emailHelp" placeholder="Phone Number" />
+                                         <label for="ec-mobile-number">Phone Number</label>
+                                          </div>
+                                        </div>
+                                        <div *ngIf="(profileFormControl.contactNo.invalid ) && (profileFormControl.contactNo.dirty || profileFormControl.contactNo.touched)" class="text-danger error-text" role="alert">
+                                          <div *ngIf="contactFormControl.number.errors?.required" class="text-danger error-text" role="alert">Phone Number is required</div>
+                                          <div *ngIf="contactFormControl.number.errors?.minlength" class="text-danger error-text" role="alert">Minimum 6 digit</div>
+                                        </div>
+                                      </div>
+                                      <div class="row">
+                                        <div class="col">
+                                            <button [disabled]="profileForm.invalid" type="submit" (click)="saveProfile()" class="btn btn-primary py-3 text-white w-100 mt-3" >
+                                                Submit
+                                              </button>
+                                        </div>
+                                        <div class="col">
+                                            <button  class="btn btn-outline-primary py-3  w-100 mt-3" [routerLink]="['/user-profile']"  >
+                                                Cancel
+                                              </button>
+                                        </div>
+                                        
+                                      </div>
+                                      
+                                </form>
+                            </div>
+                        </div>
+                  </div>
+            </div>
+    
+        </div>
+    </div>
+
+</div>
+

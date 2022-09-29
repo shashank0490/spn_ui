@@ -1,0 +1,15 @@
+<nav aria-label="Page navigation example">
+    <ul class="pagination justify-content-center">
+      <li class="page-item">
+        <a class="page-link" aria-label="Previous" (click)="navigateToPage(index)">
+          <span aria-hidden="true">&laquo;</span>
+        </a>
+      </li>
+      <!-- <li class="page-item"><a class="page-link" (click)="navigateToPage(page)">{{page}}</a></li> -->
+      <li class="page-item">
+        <a class="page-link" aria-label="Next" (click)="navigateToPage(index-1)">
+          <span aria-hidden="true">&raquo;</span>
+        </a>
+      </li>
+    </ul>
+  </nav>

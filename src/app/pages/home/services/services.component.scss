@@ -1,0 +1,47 @@
+.leftServices ul li::before {
+  position: absolute;
+  content: "";
+  top: -20px;
+  right: 0;
+  left: 0;
+  margin: 0 auto;
+  display: table;
+  background: linear-gradient(273deg, #c9c9c900 0%, #c9c9c9 100%);
+  width: 100%;
+  height: 2px;
+}
+.service:before {
+  position: absolute;
+  content: "";
+  width: 457px;
+  height: 457px;
+  background: #eff1de;
+  border-radius: 100%;
+  z-index: -1;
+  bottom: auto;
+  top: -60px;
+  right: -35%;
+}
+.service::after {
+  position: absolute;
+  content: "";
+  width: 457px;
+  height: 457px;
+  border-radius: 100%;
+  z-index: -1;
+  border: 1px solid #507b5e;
+  bottom: auto;
+  top: -100px;
+  right: -32%;
+  opacity: 0.2;
+}
+.servicedots:before {
+  position: absolute;
+  content: "";
+  background: url(../../../../assets/images/dots-big.png) no-repeat;
+  height: 150px;
+  width: 700px;
+  right: -29%;
+  bottom: -100px;
+  z-index: -2;
+}

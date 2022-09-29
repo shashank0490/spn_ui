@@ -1,0 +1,341 @@
+<ng-container *ngIf="viewMode == 'normal'">
+  <div class="container lg-grey">
+  <div class="row">
+    <div class="col-md-6 col-12 d-md-flex d-none align-items-center">
+        <img src="/assets/images/kids.png" alt="" class="w-75 img-fluid">
+        <div>
+            <h6 class="fw-bold rubik">SPN is the world’s biggest <br> network of NGOs</h6>
+            <p class="rubik" style="font-size:12px ;">Sattva helps you connect and share with the NGOs, philanthropist around world for your NGO.
+            </p>
+        </div>
+    </div>
+    <div class="col-md-6 col-12 d-flex justify-content-center">
+        <div class="card card-position border-0 rounded-5 p-3 shadow mb-3" style="width: 24rem;">
+            <div class="card-body">
+                <h3 class="card-title rubik">Create Account</h3>
+                <small class="card-text rubik">Hey, Come join india’s biggest Network of NGOs! Enter your
+                  details to successfully create an account
+                </small>
+                <div class="fs-12 rubik"> <i>* Indicates mandatory fields</i> </div>
+                <form class="" [formGroup]="registrationForm">
+                  <div class="progress mb-2 mt-2">
+                    <!-- <div class="progress-bar" [ngClass]="{'w-50': step == 1, 'w-100' : step == 2 }" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div> -->
+                    <div class="progress-bar" [style.width]="progressBar+'%'" role="progressbar" [attr.aria-valuenow]="progressWidth" aria-valuemin="0" [attr.aria-valuemax]="100"></div>
+                  </div>
+                  <ng-container *ngIf="step == 1">
+                    <div class="form-floating mb-3">
+                      <input type="text" class="form-control" id="panNumber"  aria-describedby="emailHelp" (focus)="onFocusEvent('panNumber')"
+                      placeholder="Organization PAN Number *" formControlName="pancard" maxlength=10 [readOnly]="orgExist"  oninput="this.value = this.value.toUpperCase()" (focusout)="getOrgByPan()">
+                      <!-- (input)="inputHandlePancard($event)" -->
+                      <label for="panNumber">Organization PAN Number *</label>
+                      <!-- <span class="text-danger error-text" *ngIf="(registerFormControl.pancard.touched
+                      || submitted) && registerFormControl.pancard.errors?.required">
+                      Organization PAN Number is Required
+                      </span> -->
+                      <div *ngIf="(registerFormControl.pancard.invalid || submitted) && (registerFormControl.pancard.dirty || registerFormControl.pancard.touched)" class="text-danger error-text" role="alert">
+                        <div  *ngIf="registerFormControl.pancard.errors?.required" class="text-danger error-text" role="alert">Pancard is required</div>
+                        <div *ngIf="registerFormControl.pancard.errors?.pattern" class="text-danger error-text" role="alert">Invalid Pancard</div>
+                      </div>
+                      <ng-container *ngIf="orgExist">
+                        <p class="text-danger error-text" style="font-size: 0.65em;" role="alert">Your Organization is already listed with us. Click on<span class="text-primary m-1">Continue</span></p> 
+                      </ng-container>
+                        
+
+                    </div>
+                    <div class="form-floating mb-3">
+                      <input [appAlphabetOnly]="allowedChar" type="text" class="form-control" id="orgName" placeholder="Organization Name *" formControlName="name" [readonly]="orgExist" appAlphabetOnly (focus)="onFocusEvent('orgName')">
+                      <label for="orgName" >Organization Name *</label>
+                      <div *ngIf="(registerFormControl.name.invalid || submitted) && (registerFormControl.name.dirty || registerFormControl.name.touched)" class="text-danger error-text" role="alert">
+                        <div *ngIf="registerFormControl.name.errors?.required" class="text-danger error-text" role="alert"> Please enter organization name</div>
+                      </div>
+                    </div>
+                    <div class="form-floating mb-3">
+                      <input type="text" class="form-control website_url"  [ngStyle]="{ border: invalidWebsite ? '1.5px solid red' : '1px solid #dee2e6' }"  id="orgWebsite" placeholder="Organization Website URL" formControlName="website" (keyup)="onKeySearch($event)" [readonly]="orgExist" (focus)="onFocusEvent('orgWebsite')">
+                      <label for="orgWebsite">Organization Website URL</label>
+                      <div *ngIf="(registerFormControl.website.invalid || submitted) && (registerFormControl.website.dirty || registerFormControl.website.touched)" class="text-danger error-text" role="alert">
+                        <div  class="text-danger error-text" role="alert">Organisation website url must be in valid format</div>
+                      </div>
+                      <div *ngIf="invalidWebsite && !registerFormControl.website.invalid" class="text-danger error-text" role="alert">
+                        <div  class="text-danger error-text" role="alert">Website does not exist.</div>
+                      </div>
+                      
+                    </div>
+                    <div class="form-floating">
+                      <select class="form-select" id="floatingSelect" aria-label="Floating label select example" [attr.disabled]="orgExist" formControlName="aboutInn">
+                        <option default value="" >Open this select menu</option>
+                        <option value="Word of Mouth">Word of Mouth</option>
+                        <option value="Other">Other</option>
+                        <!-- <option value="2">Two</option>
+                        <option value="3">Three</option> -->
+                      </select>
+                      <label for="floatingSelect">How did you know us? *</label>
+                      <div *ngIf="(registerFormControl.aboutInn.invalid || submitted) && (registerFormControl.aboutInn.dirty || registerFormControl.aboutInn.touched)" class="text-danger error-text" role="alert">
+                      <div  class="text-danger error-text" role="alert"> Please select how did you know us</div> 
+                      </div>
+                    </div>
+                    <div class="form-group mt-2">
+                        <ngx-recaptcha2 #captchaElem [siteKey]="recaptchaSiteKey" (success)="getCaptchaValue($event)" [size]="size"
+                         [hl]="lang" [theme]="theme" [type]="type" formControlName="recaptcha" [useGlobalDomain]="true">
+                        </ngx-recaptcha2>
+                  </div>
+                    <button [disabled]="registrationForm.invalid || invalidWebsite" type="submit" class="btn rubik btn-primary py-3 text-white w-100 mt-3" (click)="next()">
+                      {{orgExist ? "Continue" : "Start Creating Account"}}
+                    </button>
+                    <hr>
+                    <p class="text-center rubik">Already have an Account? <a routerLink="/login" class="text-decoration-none fw-bold">Login Now</a></p>
+                  </ng-container>
+                  <ng-container *ngIf="step==2" >
+                    <div class="form-floating mb-2">
+                      <input  maxlength="35" appAlphabetOnly type="text" class="form-control" id="fullName" aria-describedby="emailHelp" appAlphabetOnly 
+                      placeholder="Your Full Name *" formControlName="firstName" (focus)="onFocusEvent('fullName')">
+                      <label for="fullName">Full Name *</label>
+                      <div *ngIf="(registerFormControl.firstName.invalid || submitted) && (registerFormControl.firstName.dirty || registerFormControl.firstName.touched)" class="text-danger error-text" role="alert">
+                        <div  *ngIf="registerFormControl.firstName.errors?.required" class="text-danger error-text" role="alert">Full Name is required</div>
+                      </div>
+                    </div>
+                    <div class="form-floating mb-3">
+                      <select class="form-select" id="floatingSelect" aria-label="Floating label select example" formControlName="designationId">
+                        <option *ngFor="let item of designations" [value]="item['id']">{{item['name']}}</option>
+                      </select>
+                      <label for="floatingSelect">Designation *</label>
+                      <div *ngIf="(registerFormControl.designationId.invalid || submitted) && (registerFormControl.designationId.dirty || registerFormControl.designationId.touched)" class="text-danger error-text" role="alert">
+                        Please select a designation
+                      </div>
+                    </div>
+                    <div class="form-floating mb-3">
+                      <input type="email" class="form-control" id="personalEmaild" aria-describedby="emailHelp"
+                      placeholder="Enter Personal Email ID *" formControlName="emailId" (focus)="onFocusEvent('personalEmaild')">
+                      <label for="personalEmaild">Enter Personal Email ID *</label>
+                      <div *ngIf="(registerFormControl.emailId.invalid || submitted) && (registerFormControl.emailId.dirty || registerFormControl.emailId.touched)">
+                        <div  *ngIf="registerFormControl.emailId.errors?.required" class="text-danger error-text" role="alert">Email is required</div>
+                        <div *ngIf="registerFormControl.emailId.errors?.pattern" class="text-danger error-text" role="alert">Invalid Email</div>
+                      </div>
+                    </div>
+                    <!-- <div class="form-floating mb-2">
+                      <input type="number" class="form-control" id="floatingInput" placeholder="Phone Number" formControlName="contactNo">
+                      <label for="floatingInput">Phone Number</label>
+                      <div *ngIf="(registerFormControl.contactNo.invalid || submitted) && (registerFormControl.contactNo.dirty || registerFormControl.contactNo.touched)" class="text-danger error-text" role="alert">
+                        <div *ngIf="registerFormControl.contactNo.errors?.required" class="text-danger error-text" role="alert">Phone Number is required</div>
+                        <div *ngIf="registerFormControl.contactNo.errors?.minlength" class="text-danger error-text" role="alert">Minimum 10 digit</div>
+                      </div>
+                    </div> -->
+                    <div class="form-floating contact">
+                      <div class="form-group mb-3 d-flex" formGroupName="contactNo">
+                        <!-- <label for="contactNo">Contact Number</label> -->
+                        <select class="rounded country-code px-2 text-success fw-bold"id="floatingSelect" id="contact" style="width: 90px !important;" aria-label="Floating label select example" formControlName="countryCode" >
+                          <option *ngFor="let item of countryCodes"  [value]="item.dial_code">{{item['dial_code']}}</option>
+                        </select>
+                        <div class="form-floating mb-3">
+                          <input formControlName="number" type="number" class="form-control border-0 px-0" id="phone" aria-describedby="emailHelp" placeholder="Phone Number *" 
+                          pattern="^[6-9]\d{9}$" onKeyPress="if(this.value.length==10) return false;" (focus)="onFocusEvent('phone')"/>
+                          <label for="phone">Phone Number</label>
+                        </div>
+                      </div>
+                      <div *ngIf="(registerFormControl.contactNo.invalid || submitted) && (registerFormControl.contactNo.dirty || registerFormControl.contactNo.touched)" class="text-danger error-text" role="alert">
+                        <div *ngIf="contactFormControl.number.errors?.required" class="text-danger error-text" role="alert">Phone Number is required</div>
+                        <div *ngIf="contactFormControl.number.errors?.minlength" class="text-danger error-text" role="alert">Minimum 6 digit</div>
+                      </div>
+                    </div>
+                    <div class="mb-2 form-floating eye">
+                      <input class="form-control" id="password" placeholder="Create Password *"
+                      [type]="show ? 'text' : 'password'" formControlName="password" (focus)="onFocusEvent('password')">
+                      <label for="password">Create Password *</label>
+                      <button class="eye-icon d-flex align-items-center" (click)="showPassword()">
+                        <img src="{{show ? '/assets/images/show.svg' : '/assets/images/hide.svg'}}" alt=""></button>
+                        <div *ngIf="(registerFormControl.password.invalid || submitted) && (registerFormControl.password.dirty || registerFormControl.password.touched)" class="text-danger error-text" role="alert">
+                          <div *ngIf="registerFormControl.password.errors?.required" class="text-danger error-text" role="alert">Password is required</div>
+                          <div *ngIf="registerFormControl.password.errors?.pattern" class="text-danger error-text" role="alert">Password must be 8 characters which contain at least one numeric digit and a special character</div>
+                          <div *ngIf="registerFormControl.password.errors?.minlength" class="text-danger error-text" role="alert">Minimum 8 characters</div>
+                        </div>
+                    </div>
+                    <div class="mb-2 form-floating eye">
+                      <input class="form-control" id="confirmPassword" placeholder="Re-enter Password *"
+                      [type]="shows ? 'text' : 'password'" formControlName="confirmPassword" (focus)="onFocusEvent('confirmPassword')">
+                      <label for="confirmPassword">Re-enter Password *</label>
+                      <button class="eye-icon d-flex align-items-center" (click)="showRenterPassword()">
+                        <img src="{{shows ? '/assets/images/show.svg' : '/assets/images/hide.svg'}}" alt=""></button>
+                        <div *ngIf="(registerFormControl.confirmPassword.invalid || submitted) && (registerFormControl.confirmPassword.dirty || registerFormControl.confirmPassword.touched)" class="text-danger error-text" role="alert">
+                          <div *ngIf="registerFormControl.confirmPassword.errors?.required" class="text-danger error-text" role="alert">Password is required</div>
+                          <div *ngIf="registerFormControl.confirmPassword.errors?.pattern" class="text-danger error-text" role="alert">Password must be 8 characters which contain at least one numeric digit and a special character</div>
+                          <div *ngIf="registerFormControl.confirmPassword.errors?.minlength" class="text-danger error-text" role="alert">Minimum 8 characters</div>
+                          <div *ngIf="registerFormControl.confirmPassword.errors?.mustMatch" class="text-danger error-text" role="alert">Password do not match</div>
+                        </div>
+                    </div>
+                    <div class="mb-2 form-check">
+                      <input type="checkbox" class="form-check-input" id="exampleCheck1" formControlName="consent" style="padding-right:0!important;" >
+                      <label class="form-check-label" for="exampleCheck1">By clicking creating
+                        account, I agree to <a  [routerLink]="['/terms-and-condition']"  class="text-decoration-none" target="_blank">terms & conditions</a></label>
+                    </div>
+
+                    <button [disabled]="registrationForm.invalid" type="submit" class="btn btn-primary py-3 text-white w-100 mt-3" (click)="sendOtp()">
+                      Verify Email ID
+                    </button>
+                  </ng-container>
+                  <!-- <button [disabled]="registrationForm.invalid || invalidWebsite" type="submit" class="btn btn-primary py-3 text-white w-100 mt-3" (click)="step==1?next():sendOtp()"
+                  >{{step==1?"Start Creating Account":"Verify Email ID"}}</button> -->
+                </form>              
+            </div>
+          </div>
+    </div>
+  </div>
+</div>
+<section class="lg-green d-md-block d-none">
+  <div class="container p-5 ">
+    <div class="">
+      <h6 class="fw-bold">Our Location</h6>
+      <p>2655 HBR Layout, St. Louis, New Delhi,<br>
+          Delhi 756100
+      </p>
+      <a href="" class="text-decoration-none" style="font-size: 12px;">Get Directions
+        <span><svg xmlns="http://www.w3.org/2000/svg" width="10" height="12" viewBox="0 0 10 12">
+          <path id="Polygon_15" data-name="Polygon 15" d="M6,0l6,10H0Z" transform="translate(10) rotate(90)" fill="#0a9437"/>
+              </svg>
+        </span>
+      </a>
+      <div class="d-flex mt-5">
+        <div class="me-3">
+          <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32">
+            <path id="facebook" d="M16,0A16,16,0,1,0,32,16,16,16,0,0,0,16,0Zm3.488,16H17.249v8.124H13.892V16H12.215V13.2h1.677V11.519c0-2.284.947-3.642,3.637-3.642h2.24v2.8h-1.4c-1.047,0-1.117.392-1.117,1.121l0,1.4h2.536l-.3,2.8Z" fill="#696969"/>
+          </svg>
+        </div>
+        <div class="me-3">
+          <svg xmlns="http://www.w3.org/2000/svg" width="32.002" height="32.002" viewBox="0 0 32.002 32.002">
+            <path id="linkedin" d="M22.725,17.925h.025v-.039Zm0,0h.025v-.039Zm0,0h.025v-.039Zm0,0h.025v-.039Zm0,0h.025v-.039Zm0,0h.025v-.039Zm0,0h.025v-.039Zm0,0h.025v-.039Zm0,0h.025v-.039Zm0,0h.025v-.039Zm0,0h.025v-.039Zm0,0h.025v-.039Zm0,0h.025v-.039Zm0,0h.025v-.039Zm0,0h.025v-.039Zm0,0h.025v-.039ZM21.131,3.77a16,16,0,1,0,16,16,16,16,0,0,0-16-16Zm-4,23.2a.27.27,0,0,1-.27.266H13.777a.266.266,0,0,1-.266-.266V16.614a.266.266,0,0,1,.266-.27H16.86a.27.27,0,0,1,.27.27ZM15.21,14.96a1.934,1.934,0,1,1,1.371-.566,1.937,1.937,0,0,1-1.371.566ZM30.177,26.974a.27.27,0,0,1-.27.266H26.824a.266.266,0,0,1-.266-.266V21.407c0-1.465-.522-2.453-1.832-2.453a1.98,1.98,0,0,0-1.857,1.324,2.5,2.5,0,0,0-.119.883v5.812a.27.27,0,0,1-.27.27H19.4a.266.266,0,0,1-.266-.27c0-1.479.039-8.657,0-10.346a.266.266,0,0,1,.266-.27h3.076a.266.266,0,0,1,.27.27V17.9A3.6,3.6,0,0,1,26,16.1c2.379,0,4.166,1.556,4.166,4.905ZM22.75,17.935V17.9l-.025.039Zm-.025,0h.025V17.9Zm0,0h.025V17.9Zm0,0h.025V17.9Zm0,0h.025V17.9Zm0,0h.025V17.9Zm0,0h.025V17.9Zm0,0h.025V17.9Zm0,0h.025V17.9Zm0,0h.025V17.9Zm0,0h.025V17.9Zm0,0h.025V17.9Zm0,0h.025V17.9Zm0,0h.025V17.9Zm0,0h.025V17.9Z" transform="translate(-5.13 -3.77)" fill="#696969"/>
+          </svg>
+        </div>
+        <div>
+          <svg id="instagram" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32">
+            <path id="Path_5627" data-name="Path 5627" d="M48,36H38a2,2,0,0,0-2,2V48a2,2,0,0,0,2,2H48a2,2,0,0,0,2-2V38A2,2,0,0,0,48,36ZM43,47a4,4,0,1,1,4-4A4,4,0,0,1,43,47Zm4.5-7.25a1.25,1.25,0,1,1,1.25-1.25A1.25,1.25,0,0,1,47.5,39.75Z" transform="translate(-27 -27)" fill="#696969"/>
+            <circle id="Ellipse_449" data-name="Ellipse 449" cx="2" cy="2" r="2" transform="translate(14 14)" fill="#696969"/>
+            <path id="Path_5628" data-name="Path 5628" d="M16,0A16,16,0,1,0,32,16,16,16,0,0,0,16,0Zm9,21a4,4,0,0,1-4,4H11a4,4,0,0,1-4-4V11a4,4,0,0,1,4-4H21a4,4,0,0,1,4,4Z" fill="#696969"/>
+          </svg>
+        </div>
+      </div>
+    </div>
+</div>
+</section>
+</ng-container>
+
+<ng-container *ngIf="viewMode == 'stepper'">
+  <form class="" [formGroup]="registrationForm">
+      <div class="row">
+        <div class="col-md-6">
+          <div class="form-floating mb-2">
+            <input type="text" class="form-control" id="pancard" aria-describedby="emailHelp" (focus)="onFocusEvent('pancard')"
+            placeholder="Organization PAN Number*" formControlName="pancard" maxlength=10 [readOnly]="orgExist" (input)="inputHandlePancard($event)" oninput="this.value = this.value.toUpperCase()" >
+            <!-- <input type="text" class="form-control" id="pancard" aria-describedby="emailHelp"
+            placeholder="Organization PAN Number*" formControlName="pancard" maxlength=10 (input)="inputHandlePancard($event)" oninput="this.value = this.value.toUpperCase()"> -->
+            <label for="pancard">Organization PAN Number*</label>
+            <div *ngIf="(registerFormControl.pancard.invalid || submitted) && (registerFormControl.pancard.dirty || registerFormControl.pancard.touched)" class="text-danger error-text" role="alert">
+              <div  *ngIf="registerFormControl.pancard.errors?.required" class="text-danger error-text" role="alert">Pancard is required</div>
+              <div *ngIf="registerFormControl.pancard.errors?.pattern" class="text-danger error-text" role="alert">Invalid Pancard</div>
+            </div>
+            <div *ngIf="(registerFormControl.emailId.invalid || submitted) && (registerFormControl.emailId.dirty || registerFormControl.emailId.touched)">
+              <div  *ngIf="registerFormControl.emailId.errors?.required" class="text-danger error-text" role="alert">Email is required</div>
+              <div *ngIf="registerFormControl.emailId.errors?.email" class="text-danger error-text" role="alert">Invalid Email</div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="form-floating mb-2">
+            <input appAlphabetOnly type="text" class="form-control" id="orgName" placeholder="Organization Name*" formControlName="name" (focus)="onFocusEvent('orgName')">
+            <label for="orgName">Organization Name*</label>
+            <div *ngIf="(registerFormControl.name.invalid || submitted) && (registerFormControl.name.dirty || registerFormControl.name.touched)" class="text-danger error-text" role="alert">
+              <div *ngIf="registerFormControl.name.errors?.required" class="text-danger error-text" role="alert"> Please enter organization name</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-6">
+          <div class="form-floating mb-2">
+            <input [appAlphabetOnly]="allowedChar" type="text"  class="form-control" id="orgWebsite" [ngStyle]="{ border: invalidWebsite ? '1.5px solid red' : '1px solid #dee2e6' }" placeholder="Organization Website URL" formControlName="website" (keyup)="onKeySearch($event)"
+            (focus)="onFocusEvent('orgWebsite')">
+            <label for="orgWebsite">Organization Website URL</label>
+            <div *ngIf="(registerFormControl.website.invalid || submitted) && (registerFormControl.website.dirty || registerFormControl.website.touched)" class="text-danger error-text" role="alert">
+              <div  class="text-danger error-text" role="alert">Organisation website url must be in valid format</div>
+            </div>
+            <div *ngIf="invalidWebsite && !registerFormControl.website.invalid" class="text-danger error-text" role="alert">
+              <div  class="text-danger error-text" role="alert">Website doesnt exist.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <hr>
+      <div class="row">
+        <div class="col-md-6">
+          <div class="form-floating mb-2">
+            <input  maxlength="35" appAlphabetOnly type="text" class="form-control" id="userName" aria-describedby="emailHelp" 
+            placeholder="Your Full Name" formControlName="firstName" (focus)="onFocusEvent('userName')">
+            <label for="userName">Full Name*</label>
+            <div *ngIf="(registerFormControl.firstName.invalid || submitted) && (registerFormControl.firstName.dirty || registerFormControl.firstName.touched)" class="text-danger error-text" role="alert">
+              <div  *ngIf="registerFormControl.firstName.errors?.required" class="text-danger error-text" role="alert">Full Name is required</div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="form-floating mb-2">
+              <select class="form-select" id="floatingSelect" aria-label="Floating label select example" formControlName="designationId">
+                <option *ngFor="let item of designations" [value]="item['id']">{{item['name']}}</option>
+              </select>
+            <label for="floatingSelect">Designation*</label>
+            <div *ngIf="(registerFormControl.designationId.invalid || submitted) && (registerFormControl.designationId.dirty || registerFormControl.designationId.touched)" class="text-danger error-text" role="alert">
+              Please select a designation
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-6">
+          <div class="form-floating mb-2">
+            <input type="email" class="form-control" id="personalEmaild" aria-describedby="emailHelp"
+            placeholder="Enter Personal Email ID" formControlName="emailId" (focus)="onFocusEvent('personalEmaild')">
+            <label for="personalEmaild">Enter Personal Email ID*</label>
+            <div *ngIf="(registerFormControl.emailId.invalid || submitted) && (registerFormControl.emailId.dirty || registerFormControl.emailId.touched)">
+              <div  *ngIf="registerFormControl.emailId.errors?.required" class="text-danger error-text" role="alert">Email is required</div>
+              <div *ngIf="registerFormControl.emailId.errors?.email" class="text-danger error-text" role="alert">Invalid Email</div>
+            </div>
+          </div>
+        </div>
+        <div class="form-floating mb-2 contact">
+          <div class="form-group mt-2 d-flex" formGroupName="contactNo">
+            <!-- <label for="contactNo">Contact Number</label> -->
+            <select class="border-end country-code px-2"id="floatingSelect" id="contact" aria-label="Floating label select example" style="width: 90px !important;" formControlName="countryCode" >
+              <option *ngFor="let item of countryCodes"  [value]="item.dial_code" >{{item['dial_code']}}</option>
+            </select>
+            <input formControlName="number" type="number" class="form-control px-0" id="ec-mobile-number" aria-describedby="emailHelp" placeholder="Phone Number *" 
+            pattern="^[6-9]\d{9}$" onKeyPress="if(this.value.length==10) return false;"/>
+          </div>
+          <div *ngIf="(registerFormControl.contactNo.invalid || submitted) && (registerFormControl.contactNo.dirty || registerFormControl.contactNo.touched)" class="text-danger error-text" role="alert">
+            <div *ngIf="contactFormControl.number.errors?.required" class="text-danger error-text" role="alert">Phone Number is required</div>
+            <div *ngIf="contactFormControl.number.errors?.minlength" class="text-danger error-text" role="alert">Minimum 6 digit</div>
+          </div>
+        </div>
+      </div>
+      <div class="form-floating mb-3">
+        <select class="form-select" id="floatingSelect" aria-label="Floating label select example" [attr.disabled]="orgExist" formControlName="aboutInn" >
+          <option selected value="" >Open this select menu</option>
+          <option value="Word of Mouth">Word of Mouth</option>
+          <option value="Other">Other</option>
+        </select>
+        <label for="floatingSelect">How did you know us?*</label>
+        <div *ngIf="(registerFormControl.aboutInn.invalid || submitted) && (registerFormControl.aboutInn.dirty || registerFormControl.aboutInn.touched)" class="text-danger error-text" role="alert">
+          <div  class="text-danger error-text" role="alert"> Please select how did you know us</div> 
+        </div>
+      </div>
+      <div class="form-group mt-2">
+        <ngx-recaptcha2 #captchaElem [siteKey]="recaptchaSiteKey" (success)="getCaptchaValue($event)" [size]="size"
+         [hl]="lang" [theme]="theme" [type]="type" formControlName="recaptcha" [useGlobalDomain]="true">
+        </ngx-recaptcha2>
+       </div>
+      <div class="mb-2 form-check">
+        <input type="checkbox" class="form-check-input" id="exampleCheck1" >
+        <label class="form-check-label" for="exampleCheck1">By clicking creating
+          account, I agree to <a  class="text-decoration-none" [routerLink]="['/terms-and-condition']"  class="text-decoration-none" target="_blank" >terms & conditions</a></label>
+      </div>
+    <button type="submit" class="btn btn-primary py-3 text-white w-100 mt-3">
+      Verify Email ID</button>
+  </form>
+  <p class="text-center mt-2">Already have an Account? <a routerLink="/login" class="text-decoration-none fw-bold" >Login Now</a></p>
+  <button  class="btn btn-outline-primary w-100 py-3" (click)="joinEvent()">Continue without registration</button>
+</ng-container>

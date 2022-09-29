@@ -1,0 +1,73 @@
+@import "src/scss/functions";
+
+@import "src/scss/variables";
+
+@import "src/scss/mixins";
+
+.fundingCard1 {
+  width: 14rem;
+  height: 135px;
+  background-color: #62810b;
+}
+.fundingCard2 {
+  width: 15rem;
+  height: 270px;
+  padding: 10px 0px 10px 15px;
+  background-color: #99f0cb;
+  border: none;
+}
+.funding-card3 {
+  width: 13rem;
+  height: 195px;
+  background-color: #ffe382cf;
+  border: none;
+}
+
+.funding-card4 {
+  width: 13rem;
+  height: 140px;
+  background-color: #0b8173;
+  border: none;
+}
+
+.fundingSec::before {
+  position: absolute;
+  content: "";
+  background: url(../../../../assets/images/dots-big.png) no-repeat;
+  height: 200px;
+  width: 358px;
+  left: 0%;
+}
+.fundingImg::after {
+  position: absolute;
+  content: "";
+  background: url(../../../../assets/images/dots-big.png) no-repeat;
+  height: 200px;
+  width: 100px;
+  right: 0px;
+}
+.fundingLeft:before {
+  position: absolute;
+  content: "";
+  width: 334px;
+  height: 334px;
+  background: #c2d2bc;
+  border-radius: 100%;
+  z-index: -1;
+  top: 9rem;
+
+  /* bottom: -22px; */
+  left: 160px;
+}
+.fundingLeft::after {
+  position: absolute;
+  content: "";
+  width: 334px;
+  height: 334px;
+  border-radius: 100%;
+  z-index: -1;
+  border: 1px solid #507b5e;
+  top: 9rem;
+  left: 135px;
+  opacity: 0.2;
+}

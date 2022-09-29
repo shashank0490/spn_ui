@@ -1,0 +1,46 @@
+<div [ngClass]="{ 'blur-background': isLoading, '': !isLoading }">
+  <app-header></app-header>
+  <router-outlet></router-outlet>
+  <app-footer></app-footer>
+</div>
+<div class="page-overlay-wrapper" *ngIf="isLoading">
+  <div class="spinner">
+    <div class="sk-circle">
+      <div class="sk-circle1 sk-child"></div>
+      <div class="sk-circle2 sk-child"></div>
+      <div class="sk-circle3 sk-child"></div>
+      <div class="sk-circle4 sk-child"></div>
+      <div class="sk-circle5 sk-child"></div>
+      <div class="sk-circle6 sk-child"></div>
+      <div class="sk-circle7 sk-child"></div>
+      <div class="sk-circle8 sk-child"></div>
+      <div class="sk-circle9 sk-child"></div>
+      <div class="sk-circle10 sk-child"></div>
+      <div class="sk-circle11 sk-child"></div>
+      <div class="sk-circle12 sk-child"></div>
+    </div>
+  </div>
+</div>
+
+<!-- <button
+  (click)="topFunction()"
+  id="myBtn"
+  class="rounded-pill px-5"
+  title="Go to top"
+  style="background: #696969; box-shadow: 0px 4px 10px rgb(0 0 0 / 20%)"
+>
+  <span style="width: 12px; margin-right: 10px"
+    ><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512">
+      <path
+        d="M352 352c-8.188 0-16.38-3.125-22.62-9.375L192 205.3l-137.4 137.4c-12.5 12.5-32.75 12.5-45.25 0s-12.5-32.75 0-45.25l160-160c12.5-12.5 32.75-12.5 45.25 0l160 160c12.5 12.5 12.5 32.75 0 45.25C368.4 348.9 360.2 352 352 352z"
+        fill="#fff"/></svg >
+  </span>
+  Go Up
+</button> -->
+
+<!-- <div class="wechat">
+  <img src="../../../assets/images/wechat.png" alt="" />
+</div> -->
+
+<!-- <app-registration></app-registration>
+<app-login></app-login> -->

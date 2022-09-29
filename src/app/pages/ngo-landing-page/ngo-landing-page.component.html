@@ -1,0 +1,529 @@
+<!-- <p>ngo-landing-page works!</p> -->
+<div class="container mt-3">
+    <div class="row">
+<!-- progress bar show in mobile device -->
+<div class="col d-sm-none d-flex">
+  <div class="card w-100 card_pink mb-2">
+    <div class="card-body py-0">
+      <div class="row g-0 align-items-center my-2">
+        <div class="col-lg-3 col-md-1 col-sm-2 col-3">
+          <!-- <img
+            src="../../../assets/images/progressbar.png" class="img-fluid" alt=""/> -->
+            <div class="set-size charts-container">
+              <div class="pie-wrapper progress-45 style-2">
+                <span class="label">15<span class="smaller">%</span></span>
+                <div class="pie">
+                  <div class="left-side half-circle"></div>
+                  <div class="right-side half-circle"></div>
+                </div>
+                <div class="shadow"></div>
+              </div>
+            </div>
+        </div>
+        <div class="col-lg-9 col-md-8 col-sm-10 col-9 ">
+          <h6 class="card-title">Complete organization profile</h6>
+        </div>
+      </div>
+      <p class="card-text mb-1 fs-12">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+      </p>
+          <div class="mb-2">
+              <img src="../../../assets/images/organisation-eye.svg" alt="" class="img-fluid">
+              <span class="fs-11 ms-2">Only visible to you</span>
+          </div>
+    </div>
+  </div>
+</div>
+<!-- progress bar show in mobile device end -->
+      <div class="col-lg-9">
+        <div
+          id="carouselExampleIndicators"
+          class="carousel slide mb-3"
+          data-bs-ride="carousel"
+        >
+          <div class="carousel-indicators carousel-round">
+            <button
+              type="button"
+              data-bs-target="#carouselExampleIndicators"
+              data-bs-slide-to="0"
+              class="active"
+              aria-current="true"
+              aria-label="Slide 1"
+            ></button>
+            <button
+              type="button"
+              data-bs-target="#carouselExampleIndicators"
+              data-bs-slide-to="1"
+              aria-label="Slide 2"
+            ></button>
+            <button
+              type="button"
+              data-bs-target="#carouselExampleIndicators"
+              data-bs-slide-to="2"
+              aria-label="Slide 3"
+            ></button>
+          </div>
+          <div class="carousel-inner carousel-inner-h">
+            <div class="carousel-item active carousel-item-h">
+              <img
+                src="../../../assets/images/ngo-dumy.png"
+                class="d-block w-100 img-fluid"
+                alt="..."/>
+            </div>
+            <div class="carousel-item carousel-item-h">
+              <img
+                src="../../../assets/images/ngo-dumy.png"
+                class="d-block w-100 img-fluid"
+                alt="..."
+              />
+            </div>
+            <div class="carousel-item carousel-item-h">
+              <img
+                src="../../../assets/images/ngo-dumy.png"
+                class="d-block w-100 img-fluid"
+                alt="..."
+              />
+            </div>
+          </div>
+          <button
+            class="carousel-control-prev previous"
+            type="button"
+            data-bs-target="#carouselExampleIndicators"
+            data-bs-slide="prev"
+          >
+            <span class="" aria-hidden="true">
+              <img
+                src="../../../assets/images/arrow.png"
+                class="img-fluid"
+                alt=""
+              />
+            </span>
+            <span class="visually-hidden">Previous</span>
+          </button>
+          <button
+            class="carousel-control-next next"
+            type="button"
+            data-bs-target="#carouselExampleIndicators"
+            data-bs-slide="next"
+          >
+            <span class="" aria-hidden="true">
+              <img
+                src="../../../assets/images/rightarrow.png"
+                class="img-fluid"
+                alt=""
+              />
+            </span>
+            <span class="visually-hidden">Next</span>
+          </button>
+        </div>
+  
+        <!-- slider -->
+  
+        <!-- card -->
+        <div class="row">
+          <div *ngIf="false" class="col-sm-6 mt-lg-0 mt-3 mb-3">
+            <div class="card border-0 h-100 mb-3">
+              <div class="card-header mt-2 bg-white">
+                <div class="row g-0 align-items-center">
+                    <div class="col-xl-2 col-md-3 col-2">
+                        <span>
+                            <img src="../../../assets/images/myevents-icon.svg" class="img-fluid">
+                         </span>
+                    </div>
+                    <div class="col-xl-10 col-md-9 col-10">
+                        <div class="fw-bold ms-md-0 ms-2"> My Events</div>
+                        <p class="text-secondary ms-md-0 ms-2 fs-12 ">Working with fundraisers to provide you funds</p>
+                    </div>
+                </div>
+              </div>
+              <div class="card-body">
+                <div class="row h-100 justify-content-center align-items-center">
+                  <div class="col-lg-6 col-12">
+                    <div class="fw-bold mt-4">You have not joined any events yet</div>
+                    <p class="text-secondary fs-12">
+                      Views events to join your joined events will appear here.
+                    </p>
+                    <a href="#" class="btn mb-3 px-3 text-success border-success">View All
+                        <img src="../../../assets/images/right-arrow.svg" alt="" class="img-fluid ms-2">
+                    </a>
+                  </div>
+                  <div class="col-lg-6 col-12 text-center">
+                    <img
+                      src="../../../assets/images/myevent.png"
+                      class="img-fluid"
+                      alt=""
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- this block will show items of events -->
+          <div class="col-md-6 mt-lg-0 mt-3 mb-3">
+            <div class="card border-0 h-100 mb-3">
+              <div class="card-header mt-2 bg-white">
+                <div class="row g-0 align-items-center">
+                    <div class="col-sm-2 col-3">
+                        <span>
+                            <img src="../../../assets/images/myevents-icon.svg" class="img-fluid">
+                         </span>
+                    </div>
+                    <div class="col-lg-10 col-sm-10 col-9">
+                        <div class="fw-bold ms-xl-0 ms-md-3"> My Events</div>
+                        <p class="text-secondary ms-xl-0 ms-md-3 fs-12 ">Working with fundraisers to provide you funds</p>
+                    </div>
+                </div>
+              </div>
+              <div class="card-body">
+                <div class="row g-0 align-items-center">
+                   <div class="col-md-3 col-2">
+                        <img src="../../../assets/images/myEvents-img1.svg" class="img-fluid" style="margin-left: -5px;">
+                    </div>
+                     <div class="col-md-7 col-sm-8 col-10">
+                        <p class="fw-bold fs-12 mb-2">International Conference on  Geological and Environmental....</p>
+                       <div class="d-flex justify-content-between">
+                        <span class="fs-11">Today at 3:30pm</span>
+                        <span class="fs-11 grey-dot">NGO Management</span>
+                        <span class="fs-11 grey-dot">Online</span>
+                       </div>
+                      </div>
+                      <div class="col-sm-2 col-12 text-sm-center">
+                        <img src="../../../assets/images/notification-bell.svg" alt="" class="img-fluid d-sm-inline d-none">
+<div class="d-sm-none mt-2">
+  <img src="../../../assets/images/notified-bell.svg" alt="" class="img-fluid">
+  <span class=" fs-11 ms-2 text-success">You will be notified for the event</span>
+</div>
+                      </div>
+                </div>
+                <hr>
+                <div class="row g-0 align-items-center">
+                  <div class="col-md-3 col-2">
+                       <img src="../../../assets/images/myEvents-img1.svg" class="img-fluid" style="margin-left: -5px;">
+                   </div>
+                    <div class="col-md-7 col-sm-8 col-10">
+                       <p class="fw-bold fs-12 mb-2">International Conference on  Geological and Environmental....</p>
+                      <div class="d-flex justify-content-between">
+                       <span class="fs-11">Today at 3:30pm</span>
+                       <span class="fs-11 grey-dot">NGO Management</span>
+                       <span class="fs-11 grey-dot">Online</span>
+                      </div>
+                     </div>
+                     <div class="col-sm-2 col-12 text-sm-center">
+                       <img src="../../../assets/images/notification-plus.svg" alt="" class="img-fluid d-sm-inline d-none">
+                       <div class="d-sm-none mt-2">
+                        <img src="../../../assets/images/notified-plus.svg" alt="" class="img-fluid">
+                        <span class=" fs-11 ms-2 text-success">Get Notified</span>
+                      </div>
+                     </div>
+               </div>
+<div class="d-flex btn-direction mt-3">
+  <button class="btn btn-success text-white mx-1 px-3 py-2 mb-2 btn-width">Joined Events</button>
+  <button class="btn btn-outline-success mx-1 px-4 py-2 mb-2 btn-width">View All</button>
+</div>
+              </div>
+            </div>
+          </div>
+          <!-- this block will show items of events end -->
+
+          <!-- the below block will visible when events data not found  -->
+          <div  *ngIf="false" class="col-md-6 mt-lg-0 mt-3 mb-3">
+            <div class="card border-0 h-100 rounded mb-3">
+                <div class="card-header mt-2 bg-white">
+                    <div class="row g-0 h-100 align-items-center">
+                        <div class="col-xl-2 col-lg-3 col-md-4 col-2">
+                            <span>
+                                <img src="../../../assets/images/fundingopp.icon.svg" class="img-fluid">
+                             </span>
+                        </div>
+                        <div class="col-xl-10 col-md-9 col-10">
+                            <div class="fw-bold ms-md-0 ms-2"> Funding Opportunity</div>
+                            <p class="text-secondary ms-md-0 ms-2 fs-12">Working with fundraisers to provide you funds</p>
+                        </div>
+                    </div>
+                  </div>
+              <div class="card-body">
+                <div class="row h-100 justify-content-center align-items-center">
+                  <div class="col-lg-6 col-12">
+                    <div class="fw-bold">
+                      Complete your profile to view funding opportunities
+                    </div>
+                    <p class="text-secondary fs-12">
+                      Views events to join your joined events will appear here.
+                    </p>
+                    <a href="#" class="btn text-success px-3 border-success">View All
+                        <img src="../../../assets/images/right-arrow.svg" alt="" class="img-fluid ms-2">
+                    </a>
+                  </div>
+                  <div class="col-lg-6 col-12 text-center">
+                    <img
+                      src="../../../assets/images/Complete Profile 1.png"
+                      class="img-fluid"
+                      alt=""
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- the below block will visible when events data not found  -->
+
+          <!-- this block will show items of events -->
+          <div class="col-md-6 mt-lg-0 mt-3 mb-3">
+            <div class="card border-0 h-100 rounded mb-3">
+                <div class="card-header mt-2 bg-white">
+                    <div class="row g-0 h-100 align-items-center">
+                        <div class="col-sm-2 col-3">
+                            <span>
+                                <img src="../../../assets/images/fundingopp.icon.svg" class="img-fluid">
+                             </span>
+                        </div>
+                        <div class="col-lg-10 col-sm-10 col-9">
+                            <div class="fw-bold ms-xl-0 ms-md-2">Funding Opportunity</div>
+                            <p class="text-secondary ms-xl-0 ms-md-2 fs-12">Working with fundraisers to provide you funds</p>
+                        </div>
+                    </div>
+                  </div>
+              <div class="card-body">
+                <div class="row g-0 align-items-center">
+                    <div class="col-xl-2 col-md-3 col-sm-2 col-3">
+                      <img src="../../../assets/images/funding-img1.png" class="img-fluid" alt="">
+                    </div>
+                    <div class="col-xl-10 col-md-9 col-sm-10 col-9">
+                      <p class="fs-12 mb-1 ms-2">Education grant by <strong>Bill & Melinda Gates Foundation</strong></p>
+                      <div class="d-flex">
+                        <span><a href="#" class="text-decoration-none fs-12 ms-2" style="color: #0F68EE;">$3.2 Billion in Funding</a></span>
+                      </div>
+                    </div>
+                </div>
+                <hr class="myhrline">
+                <div class="row g-0 align-items-center">
+                  <div class="col-xl-2 col-md-3 col-sm-2 col-3">
+                    <img src="../../../assets/images/funding-img1.png" class="img-fluid" alt="">
+                  </div>
+                  <div class="col-xl-10 col-md-9 col-sm-10 col-9">
+                    <p class="fs-12 mb-1 ms-2">Education grant by <strong>Bill & Melinda Gates Foundation</strong></p>
+                    <div class="d-flex">
+                      <span><a href="#" class="text-decoration-none fs-12 ms-2" style="color: #0F68EE;">$3.2 Billion in Funding</a></span>
+                    </div>
+                  </div>
+                  </div>
+                  <hr class="myhrline">
+
+                  <div class="d-flex btn-direction mt-3">
+                    <button class="btn btn-success text-white px-3 mb-2 mx-1 py-2 btn-width">My Opportunities</button>
+                    <button class="btn btn-outline-success mx-1 px-4 mb-2 py-2 btn-width">View All</button>
+                  </div>
+
+              </div>
+            </div>
+          </div>
+          <!-- this block will show items of events end -->
+
+          <!-- the below block will visible when events data not found  -->
+          <div *ngIf="false" class="col-12">
+            <div class="card border-0 mb-3">
+                <div class="card-header mt-2 bg-white">
+                    <div class="row h-100 align-items-center">
+                        <div class="col-lg-1 col-sm-2 col-2">
+                            <span>
+                                <img src="../../../assets/images/fundingopp.icon.svg" class="">
+                             </span>
+                        </div>
+                        <div class="col-lg-11 col-sm-10 col-10">
+                            <div class="fw-bold ms-lg-0 ms-2">My Resources</div>
+                            <p class="text-secondary fs-12 ms-lg-0 ms-2">Working with fundraisers to provide you funds</p>
+                        </div>
+                    </div>
+                  </div>
+              <div class="card-body px-5">
+                <div class="row h-100 align-items-center justify-content-center">
+                  <div class="col-lg-4 col-md-5 col-12">
+                    <div class="fw-bold">
+                      You have no resources
+                    </div>
+                    <p class="text-secondary fs-12">
+                      Views events to join your joined events will appear here.
+                    </p>
+                    <a href="#" class="btn text-success mb-3 px-3 border-success">View Resources
+                        <img src="../../../assets/images/right-arrow.svg" alt="" class="ms-2">
+                    </a>
+                  </div>
+                  <div class="col-lg-6 col-md-5 col-12">
+                    <img
+                      src="../../../assets/images/Nothing 1.png"
+                      class="img-fluid"
+                      alt=""
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- the below block will visible when events data not found  -->
+
+          <div class="col-12">
+            <div class="card border-0 mb-3">
+                <div class="card-header mt-2 bg-white">
+                    <div class="row g-0 h-100 align-items-center">
+                        <div class="col-md-1 col-sm-2 col-3">
+                            <span>
+                                <img src="../../../assets/images/fundingopp.icon.svg" class="img-fluid">
+                             </span>
+                        </div>
+                        <div class="col-lg-5 col-md-5 col-sm-10 col-9">
+                            <div class="fw-bold ms-xl-0 ms-2">My Resources</div>
+                            <p class="text-secondary fs-12 ms-xl-0 ms-2">Working with fundraisers to provide you funds</p>
+                        </div>
+                        <div class=" col-md-6 text-end">
+                          <button class="btn btn-success text-white mx-2 d-md-inline-block d-none px-3 py-2">My Resources</button>
+                          <button class="btn btn-outline-success mx-2 px-4 py-2 d-md-inline-block d-none">View All</button>
+                        </div>
+                    </div>
+                  </div>
+              <div class="card-body">
+                <div class="row g-0 align-items-center">
+                    <div class="col-xl-1 col-sm-2 col-3">
+                       <img src="../../../assets/images/funding-img1.png" class="img-fluid" alt="">
+                    </div>
+                    <div class="col-xl-8 col-sm-7 col-9">
+                       <p class="fs-12 fw-bold m-0">Resource or template name</p>
+                        <span class="fs-11">All Conference Alert is the trusted partner for academician and o attain a for researcb..</span>
+                    </div>
+                    <div class="col-sm-3 col-7 fs-12 text-sm-center text-end">
+                        <a href="#" class="text-decoration-none">View Resource
+                      <img src="../../../assets/images/right-arrow.svg" class="img-fluid" alt="">
+                    </a>
+                    </div>
+                </div>
+                  <hr>
+
+                  <div class="row g-0 align-items-center">
+                    <div class="col-xl-1 col-sm-2 col-3">
+                       <img src="../../../assets/images/funding-img1.png" class="img-fluid" alt="">
+                    </div>
+                    <div class="col-xl-8 col-sm-7 col-9">
+                       <p class="fs-12 fw-bold m-0">Resource or template name</p>
+                        <span class="fs-11">All Conference Alert is the trusted partner for academician and o attain a for researcb..</span>
+                    </div>
+                    <div class="col-sm-3 col-7 fs-12 text-sm-center text-end">
+                        <a href="#" class="text-decoration-none">View Resource
+                      <img src="../../../assets/images/right-arrow.svg" alt="">
+                    </a>
+                    </div>
+                </div>
+              <hr>
+
+              <div class="row g-0 align-items-center">
+                <div class="col-xl-1 col-sm-2 col-3">
+                   <img src="../../../assets/images/funding-img1.png" class="img-fluid" alt="">
+                </div>
+                <div class="col-xl-8 col-sm-7 col-9">
+                   <p class="fs-12 fw-bold m-0">Resource or template name</p>
+                    <span class="fs-11">All Conference Alert is the trusted partner for academician and o attain a for researcb..</span>
+                </div>
+                <div class="col-sm-3 col-7 fs-12 text-sm-center text-end">
+                    <a href="#" class="text-decoration-none">View Resource
+                  <img src="../../../assets/images/right-arrow.svg" class="img-fluid" alt="">
+                </a>
+                </div>
+            </div>
+             <hr>
+
+             <!-- <div class="row g-0 align-items-center">
+              <div class="col-xl-1 col-sm-2 col-3">
+                 <img src="../../../assets/images/funding-img1.png" class="img-fluid" alt="">
+              </div>
+              <div class="col-xl-8 col-sm-7 col-9">
+                 <p class="fs-12 fw-bold m-0">Resource or template name</p>
+                  <span class="fs-11">All Conference Alert is the trusted partner for academician and o attain a for researcb..</span>
+              </div>
+              <div class="col-sm-3 col-7 fs-12 text-sm-center text-end">
+                  <a href="#" class="text-decoration-none">View Resource
+                <img src="../../../assets/images/right-arrow.svg" class="img-fluid" alt="">
+              </a>
+              </div>
+          </div> -->
+          <div class="d-flex btn-direction mt-3">
+            <button class="btn btn-success text-white px-3 mb-2 mx-1 py-2 d-md-none btn-width">My Resources</button>
+            <button class="btn btn-outline-success mx-1 px-4 mb-2 py-2 d-md-none btn-width">View All</button>
+          </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+  
+      <div class="col-lg-3">
+        <div class="card d-sm-flex d-none card_pink mb-2">
+          <div class="card-body py-0">
+            <div class="row g-0 align-items-center my-2">
+              <div class="col-lg-3 col-md-1 col-sm-2 col-3">
+                <!-- <img
+                  src="../../../assets/images/progressbar.png" class="img-fluid" alt=""/> -->
+                  <div class="set-size charts-container">
+                    <div class="pie-wrapper progress-45 style-2">
+                      <span class="label">15<span class="smaller">%</span></span>
+                      <div class="pie">
+                        <div class="left-side half-circle"></div>
+                        <div class="right-side half-circle"></div>
+                      </div>
+                      <div class="shadow"></div>
+                    </div>
+                  </div>
+              </div>
+              <div class="col-lg-9 col-md-8 col-sm-10 col-9 ">
+                <h6 class="card-title">Complete organization profile</h6>
+              </div>
+            </div>
+            <p class="card-text mb-1 fs-12">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            </p>
+                <div class="mb-2">
+                    <img src="../../../assets/images/organisation-eye.svg" alt="" class="img-fluid">
+                    <span class="fs-11 ms-2">Only visible to you</span>
+                </div>
+          </div>
+        </div>
+  
+        <div class="card border-0 mb-2">
+          <div class="card-header bg-white">
+            <div class="fw-bold">Recent News</div>
+          </div>
+          <div class="card-body">
+            <ul class="list-unstyled fs-12">
+              <li>Working with fundraisers to provide you funds</li>
+              <hr style="margin: 10px 0;">
+              <li>Working with fundraisers to provide you funds</li>
+              <hr style="margin: 10px 0;">
+              <li>Working with fundraisers to provide you funds</li>
+              <hr style="margin: 10px 0;">
+              <li>Working with fundraisers to provide you funds</li>
+              <hr style="margin: 10px 0;">
+              <li>Working with fundraisers to provide you funds</li>
+              <hr style="margin: 10px 0;">
+              <li>Working with fundraisers to provide you funds</li>
+            </ul>
+          </div>
+        </div>
+  
+        <div class="card border-0 mb-2">
+          <img
+            src="../../../assets/images/Group 1489.png"
+            class="card-img-top img-fluid"
+            alt=""
+          />
+          <div class="card-body">
+            <h5 class="card-title fw-bold">Learn how to use SPN portal</h5>
+            <p class="card-text fs-12">
+                Lorem Ipsum hasv been the industry's standard dummy text ever since the 1500s,
+            </p>
+          </div>
+        </div>
+<div class="btn-up text-end mt-5 mb-3 me-3">
+  <button class="rounded-pill bg-secondary border-0 px-4 btn-lg text-white">
+    <span><img src="../.././../assets/images/go-up-arrow.svg" alt="" class=" img-fluid me-2"></span>
+     Go up</button>
+</div>
+      </div>
+    </div>
+  </div>

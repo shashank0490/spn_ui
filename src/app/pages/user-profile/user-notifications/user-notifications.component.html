@@ -1,0 +1,72 @@
+
+<div class="container-fluid mb-4" style="background-color: #DFE2D7;">
+    <div style="height: 700px">
+        <div class="row">
+            <div class="w-100 d-flex justify-content-center my-3">
+            <div class="row w-50">
+                    <div class="row">
+                        <div class="col-1 d-flex justify-content-end  align-items-center">
+                            <img  style="cursor: pointer;"  routerLink="/user-profile" class="img-fluid img-class-arrow " src="/assets/images/leftarrow.svg" >
+                        </div>
+                        <div class="col-11">
+                            <h4>Notifications</h4>
+                            <p class="text-secondary fs-14">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ad magni dolorum aut voluptate dolore, fugiat iste qui commodi nisi cum!</p>
+                        </div>
+                        </div>
+
+                </div>
+            </div>
+            </div>
+            <div class="w-100 d-flex justify-content-center ">
+                <div class="card" style="width: 47rem;">
+                    <div class="card-body  ">
+                        <div class="row px-3">
+                            <div class="row">
+                                <table class="table table-borderless">
+                                    <thead style="border-bottom: 1px solid #D7D7D7;">
+                                      <tr class="fw-light">
+                                        <th scope="col">Notification Type</th>
+                                        <th scope="col"><span ><img  style="height: 18px;" src="/assets/images/whatsapp.svg" alt="" srcset=""></span> WhatsApp</th>
+                                        <th scope="col"><span><img  src="/assets/images/email-1.svg" alt="" srcset=""></span> Email</th>
+                                      </tr>
+                                    </thead>
+                                    <tbody class="fw-lighter">
+                                      <tr class="" *ngFor="let item of userNotificationJson">
+                                        <th scope="row" class="fw-lighter">{{item.label}}</th>
+                                        <td>
+                                            <div class="form-check">
+                                            <input class="form-check-input" style="background-color: white;" type="checkbox" [(ngModel)]="item.whatsapp"  id="flexCheckDefault" (click)="toggleNotifications($event)">
+                                          </div>
+                                        </td>
+                                        <td>
+                                            <div class="form-check">
+                                                <input class="form-check-input"   style="background-color: white;"[(ngModel)]="item.email" type="checkbox"  id="flexCheckDefault" (click)="toggleNotifications($event)">
+                                            </div>
+                                        </td>
+                                      </tr>
+
+                                    </tbody>
+                                  </table>
+                                  <div class="row">
+                                    <div class="col">
+                                        <button  type="submit" class="btn btn-primary py-3 text-white w-100 mt-3" >
+                                            Submit
+                                          </button>
+                                    </div>
+                                    <div class="col">
+                                        <button  class="btn btn-outline-primary py-3  w-100 mt-3" [routerLink]="['/user-profile']"   >
+                                            Cancel
+                                          </button>
+                                    </div>
+                                    
+                                  </div>
+                            </div>
+                        </div>
+                  </div>
+            </div>
+    
+        </div>
+    </div>
+
+</div>
+

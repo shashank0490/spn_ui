@@ -1,0 +1,16 @@
+<div class="d-flex  flex-column" style="backdrop-filter: blur(5px);">
+    <h5 class="card-title fw-bold mb-3 rubik">{{formType=='default' ? 'Verify Your Email' : 'Verify with OTP to save'}}</h5>
+    <small class="card-subtitle mb-1 rubik">Please check your mail to find a 6 digits code sent to </small>
+    <small class="card-subtitle mb-3" >
+        <strong>{{data?.formData?.emailId}}</strong>
+        <a *ngIf="data.showEmail" class="text-success m-2 fw-bold" style="cursor: pointer;" (click)="closeDialog()">Change Email</a>
+    </small>
+        <ng-otp-input #ngOtpInput (onInputChange)="onOtpChange($event)" [config]="config"></ng-otp-input>
+        <!-- <button class="btn btn-primary w-100 text-white mt-4 p-3" [ngClass]="{'mb-4': formType=='default'}"  (click)="submitUserData()" [disabled]="otp?.length != config?.length">{{formType=='save' ? 'Save Changes' :'Continue to Profile'}}</button> -->
+        <button class="btn btn-primary w-100 text-white mt-4 p-3" [ngClass]="{'mb-4': formType=='default'}"  (click)="submitUserData()" [disabled]="otp?.length != config?.length">{{data.label ? data.label : 'Continue'}}</button>
+
+       <ng-container *ngIf="formType== 'save'">
+        <button class="btn btn-outline-secondary w-100  mb-3 mt-2 p-3" [ngClass]="{'mt-4': formType!=='save'}"  (click)="closeDialog()" >Cancel</button>
+       </ng-container> 
+    <p class="mt-2 text-center"><a  class=" text-success fw-bold" [ngClass]="{'text-secondary':isDisabled,'text-primary':!isDisabled}" [ngStyle]="{'cursor':isDisabled ? 'not-allowed' : 'pointer', 'pointer-events':isDisabled ? 'none' : 'all'}" (click)="resendOTP()">Resend OTP</a> in <span>{{transform(counter)}}s</span></p>
+</div>

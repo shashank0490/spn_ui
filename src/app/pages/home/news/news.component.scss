@@ -1,0 +1,19 @@
+.newsAndBlogsWrap::before {
+  position: absolute;
+  content: "";
+  background: url(../../../../assets/images/dots-big.png) no-repeat;
+  height: 250px;
+  width: 545px;
+  right: 0px;
+  top: -9rem;
+}
+.newsAndBlogsWrap::after {
+  position: absolute;
+  content: "";
+  background: url(../../../../assets/images/dots-big.png) no-repeat;
+  height: 175px;
+  width: 700px;
+  /* right: 0px; */
+  left: 0px;
+  bottom: 0;
+}

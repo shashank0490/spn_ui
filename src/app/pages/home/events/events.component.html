@@ -1,0 +1,395 @@
+<section class="bg-light ps-relative mt-5 py-5" style="height: 600px">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-4 col-md-6 col-sm-12">
+        <div class="col w-100">
+          <span class="subTitle fw-bold text-secondary fs-12 lh-base"
+            >EVENTS, SEMINAR & WEBINARS</span
+          >
+          <h2 class="fw-bold text-dark fs-2 lh-base">
+            Much awaited events
+            <br />
+            in your town
+            {{ data?.subtitle }}
+          </h2>
+
+          <p class="text-secondary text-wrap mt-3 lh-base">
+            Lorem Ipsum has been the industry's standard dummy text ever since
+            the 1500s. Lorem Ipsum has been the industry's standard dummy
+            {{ data?.context }}
+          </p>
+
+          <button
+            type="button"
+            class="btn btn-primary py-3 px-5 text-white my-3"
+          >
+            View All Events
+          </button>
+
+          <div
+            class="d-flex flex-wrap justify-content-between align-items-center mt-3"
+          >
+            <div *ngFor="let count of data?.counts" class="w-50">
+              <span class="count-border-bottom fs-2 fw-bold">{{
+                count?.name
+              }}</span>
+              <p class="text-secondary w-75">
+                <!-- NGOs have created <br />
+              events -->
+                {{ count?.detail }}
+              </p>
+            </div>
+
+            <!-- <div>
+            <h2>1.9M+</h2>
+            <p>
+              People have joined <br />
+              the events
+            </p>
+          </div> -->
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-8 col-md-6 col-sm-12 sliderImage">
+        <div
+          id="carouselExampleControls"
+          class="carousel slide"
+          style="z-index: 99"
+          data-bs-ride="carousel"
+        >
+          <div class="carousel-inner">
+            <div
+              class="carousel-item"
+              *ngFor="let item of eventList; let i = index"
+              [ngClass]="{ active: i == 0 }"
+            >
+              <div class="row row-cols-1 row-cols-lg-3 g-2">
+                <app-card
+                  *ngFor="let data of item?.data"
+                  [data]="data"
+                  [viewMode]="viewMode"
+                ></app-card>
+              </div>
+            </div>
+
+            <!-- <div class="carousel-item active">
+              <div class="row row-cols-1 row-cols-lg-3 g-2">
+                <div class="col">
+                  <div class="">
+                    <div class="card">
+                      <div class="eventCard1 rounded-top">
+                        <button
+                          href="#"
+                          class="registerNow btn text-primary btn-light rounded-pill"
+                        >
+                          Register Now
+                        </button>
+                      </div>
+
+                      <div class="card-body">
+                        <h5 class="card-title fs-6 fw-bold">
+                          Join the movement of <br />creating a irrigation
+                          system
+                        </h5>
+                        <div
+                          class="d-flex flex-wrap justify-content-between fs-6"
+                        >
+                          <span>06 Jul</span>
+                          <span>Farming</span>
+                          <span>Event</span>
+                        </div>
+                        <p class="card-text fs-6 text-wrap">
+                          B-154, Street Number 9, Mayur Vihar Phase II, Vinod
+                          Nagar East, New Delhi
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col">
+                  <div class="">
+                    <div class="card">
+                      <div class="eventCard2 rounded-top">
+                        <button
+                          href="#"
+                          class="registerNow btn text-primary btn-light rounded-pill"
+                        >
+                          Register Now
+                        </button>
+                      </div>
+
+                      <div class="card-body">
+                        <h5 class="card-title fs-6 fw-bold">
+                          Funding Round from <br />Philatrophist around the w...
+                        </h5>
+                        <div
+                          class="d-flex flex-wrap justify-content-between fs-6"
+                        >
+                          <span>06 Jul</span>
+                          <span>Farming</span>
+                          <span>Event</span>
+                        </div>
+                        <p class="card-text fs-6">
+                          B-154, Street Number 9, Mayur Vihar Phase II, Vinod
+                          Nagar East, New Delhi
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col">
+                  <div class="">
+                    <div class="card">
+                      <div class="eventCard1 rounded-top">
+                        <button
+                          href="#"
+                          class="registerNow btn text-primary btn-light rounded-pill"
+                        >
+                          Register Now
+                        </button>
+                      </div>
+
+                      <div class="card-body">
+                        <h5 class="card-title fs-6 fw-bold">
+                          Join the movement of <br />creating a irrigation
+                          system
+                        </h5>
+                        <div
+                          class="d-flex flex-wrap justify-content-between fs-6"
+                        >
+                          <span>06 Jul</span>
+                          <span>Farming</span>
+                          <span>Event</span>
+                        </div>
+                        <p class="card-text fs-6">
+                          B-154, Street Number 9, Mayur Vihar Phase II, Vinod
+                          Nagar East, New Delhi
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <div class="row row-cols-1 row-cols-lg-3 g-2">
+                <div class="col">
+                  <div class="">
+                    <div class="card">
+                      <div class="eventCard1 rounded-top">
+                        <button
+                          href="#"
+                          class="registerNow btn text-primary btn-light rounded-pill"
+                        >
+                          Register Now
+                        </button>
+                      </div>
+
+                      <div class="card-body">
+                        <h5 class="card-title fs-6 fw-bold">
+                          Join the movement of <br />creating a irrigation
+                          system
+                        </h5>
+                        <div
+                          class="d-flex flex-wrap justify-content-between fs-6"
+                        >
+                          <span>06 Jul</span>
+                          <span>Farming</span>
+                          <span>Event</span>
+                        </div>
+                        <p class="card-text fs-6 text-wrap">
+                          B-154, Street Number 9, Mayur Vihar Phase II, Vinod
+                          Nagar East, New Delhi
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col">
+                  <div class="">
+                    <div class="card">
+                      <div class="eventCard2 rounded-top">
+                        <button
+                          href="#"
+                          class="registerNow btn text-primary btn-light rounded-pill"
+                        >
+                          Register Now
+                        </button>
+                      </div>
+
+                      <div class="card-body">
+                        <h5 class="card-title fs-6 fw-bold">
+                          Funding Round from <br />Philatrophist around the w...
+                        </h5>
+                        <div
+                          class="d-flex flex-wrap justify-content-between fs-6"
+                        >
+                          <span>06 Jul</span>
+                          <span>Farming</span>
+                          <span>Event</span>
+                        </div>
+                        <p class="card-text fs-6">
+                          B-154, Street Number 9, Mayur Vihar Phase II, Vinod
+                          Nagar East, New Delhi
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col">
+                  <div class="">
+                    <div class="card">
+                      <div class="eventCard1 rounded-top">
+                        <button
+                          href="#"
+                          class="registerNow btn text-primary btn-light rounded-pill"
+                        >
+                          Register Now
+                        </button>
+                      </div>
+
+                      <div class="card-body">
+                        <h5 class="card-title fs-6 fw-bold">
+                          Join the movement of <br />creating a irrigation
+                          system
+                        </h5>
+                        <div
+                          class="d-flex flex-wrap justify-content-between fs-6"
+                        >
+                          <span>06 Jul</span>
+                          <span>Farming</span>
+                          <span>Event</span>
+                        </div>
+                        <p class="card-text fs-6">
+                          B-154, Street Number 9, Mayur Vihar Phase II, Vinod
+                          Nagar East, New Delhi
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <div class="row row-cols-1 row-cols-lg-3 g-2">
+                <div class="col">
+                  <div class="">
+                    <div class="card">
+                      <div class="eventCard1 rounded-top">
+                        <button
+                          href="#"
+                          class="registerNow btn text-primary btn-light rounded-pill"
+                        >
+                          Register Now
+                        </button>
+                      </div>
+
+                      <div class="card-body">
+                        <h5 class="card-title fs-6 fw-bold">
+                          Join the movement of <br />creating a irrigation
+                          system
+                        </h5>
+                        <div
+                          class="d-flex flex-wrap justify-content-between fs-6"
+                        >
+                          <span>06 Jul</span>
+                          <span>Farming</span>
+                          <span>Event</span>
+                        </div>
+                        <p class="card-text fs-6 text-wrap">
+                          B-154, Street Number 9, Mayur Vihar Phase II, Vinod
+                          Nagar East, New Delhi
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col">
+                  <div class="">
+                    <div class="card">
+                      <div class="eventCard2 rounded-top">
+                        <button
+                          href="#"
+                          class="registerNow btn text-primary btn-light rounded-pill"
+                        >
+                          Register Now
+                        </button>
+                      </div>
+
+                      <div class="card-body">
+                        <h5 class="card-title fs-6 fw-bold">
+                          Funding Round from <br />Philatrophist around the w...
+                        </h5>
+                        <div
+                          class="d-flex flex-wrap justify-content-between fs-6"
+                        >
+                          <span>06 Jul</span>
+                          <span>Farming</span>
+                          <span>Event</span>
+                        </div>
+                        <p class="card-text fs-6">
+                          B-154, Street Number 9, Mayur Vihar Phase II, Vinod
+                          Nagar East, New Delhi
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col">
+                  <div class="">
+                    <div class="card">
+                      <div class="eventCard1 rounded-top">
+                        <button
+                          href="#"
+                          class="registerNow btn text-primary btn-light rounded-pill"
+                        >
+                          Register Now
+                        </button>
+                      </div>
+
+                      <div class="card-body">
+                        <h5 class="card-title fs-6 fw-bold">
+                          Join the movement of <br />creating a irrigation
+                          system
+                        </h5>
+                        <div
+                          class="d-flex flex-wrap justify-content-between fs-6"
+                        >
+                          <span>06 Jul</span>
+                          <span>Farming</span>
+                          <span>Event</span>
+                        </div>
+                        <p class="card-text fs-6">
+                          B-154, Street Number 9, Mayur Vihar Phase II, Vinod
+                          Nagar East, New Delhi
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div> -->
+          </div>
+          <button
+            class="carousel-control-prev"
+            type="button"
+            data-bs-target="#carouselExampleControls"
+            data-bs-slide="prev"
+          >
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+          </button>
+          <button
+            class="carousel-control-next"
+            type="button"
+            data-bs-target="#carouselExampleControls"
+            data-bs-slide="next"
+          >
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

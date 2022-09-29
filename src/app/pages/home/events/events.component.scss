@@ -1,0 +1,51 @@
+@import "src/scss/functions";
+
+@import "src/scss/variables";
+
+@import "src/scss/mixins";
+
+.count-border-bottom {
+  border-bottom: 2px solid #a17cdd;
+  width: 50px;
+}
+.eventCard1 {
+  border: none;
+  background: url(../../../../assets/images/muchAwaitedEvents-1.png) no-repeat;
+  background-size: cover;
+  background-position: center;
+  height: 200px;
+}
+
+.eventCard2 {
+  border: none;
+  background: url(../../../../assets/images/muchAwaitedEvents-2.png) no-repeat;
+  background-size: cover;
+  background-position: center;
+  height: 200px;
+}
+.sliderImage::before {
+  position: absolute;
+  content: "";
+  width: 415px;
+  height: 415px;
+  background: #c2d2bc;
+  border-radius: 100%;
+  left: 47%;
+  top: auto;
+}
+
+.sliderImage::after {
+  position: absolute;
+  content: "";
+  width: 400px;
+  height: 400px;
+  border-radius: 100%;
+  border: 1px solid #507b5e;
+  right: 22rem;
+  top: 4rem;
+  opacity: 0.2;
+  z-index: 2;
+}
+.registerNow {
+  margin: 10rem 0rem 0rem 1rem;
+}

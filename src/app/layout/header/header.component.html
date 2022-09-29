@@ -1,0 +1,706 @@
+<header class="">
+  <nav *ngIf="showTopbar" class="navbar navbar-expand-lg p-0 bg-light">
+    <div class="container">
+      <nav class="collapse navbar-collapse text-uppercase" id="navbarScroll ">
+        <ul
+          class="navbar-nav me-auto navbar-nav-scroll navbarLink"
+          style="--bs-scroll-height: 100px"
+        >
+          <li class="nav-item dropdown">
+            <a
+              class="nav-link dropdown-toggle text-muted font-link"
+             
+              id="navbarScrollingDropdown"
+              role="button"
+              data-bs-toggle="dropdown"
+              aria-expanded="false"
+            >
+              <img class="img-responsive" src="./assets/images/globe.svg" />
+              Eng
+            </a>
+            <ul
+              class="dropdown-menu font-link"
+              aria-labelledby="navbarScrollingDropdown"
+            >
+              <li>
+                <a class="dropdown-item">Eng</a>
+              </li>
+              <li><a class="dropdown-item">Hindi</a></li>
+
+              <li><a class="dropdown-item">Another</a></li>
+            </ul>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="https://www.facebook.com/SattvaIndia/">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="25"
+                height="25"
+                viewBox="0 0 32 32"
+              >
+                <path
+                  id="facebook"
+                  d="M16,0A16,16,0,1,0,32,16,16,16,0,0,0,16,0Zm3.488,16H17.249v8.124H13.892V16H12.215V13.2h1.677V11.519c0-2.284.947-3.642,3.637-3.642h2.24v2.8h-1.4c-1.047,0-1.117.392-1.117,1.121l0,1.4h2.536l-.3,2.8Z"
+                  fill="#696969"
+                ></path>
+              </svg>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a
+              class="nav-link"
+              href="https://www.linkedin.com/company/2635534/"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="25"
+                height="25"
+                viewBox="0 0 32.002 32.002"
+              >
+                <path
+                  id="linkedin"
+                  d="M22.725,17.925h.025v-.039Zm0,0h.025v-.039Zm0,0h.025v-.039Zm0,0h.025v-.039Zm0,0h.025v-.039Zm0,0h.025v-.039Zm0,0h.025v-.039Zm0,0h.025v-.039Zm0,0h.025v-.039Zm0,0h.025v-.039Zm0,0h.025v-.039Zm0,0h.025v-.039Zm0,0h.025v-.039Zm0,0h.025v-.039Zm0,0h.025v-.039Zm0,0h.025v-.039ZM21.131,3.77a16,16,0,1,0,16,16,16,16,0,0,0-16-16Zm-4,23.2a.27.27,0,0,1-.27.266H13.777a.266.266,0,0,1-.266-.266V16.614a.266.266,0,0,1,.266-.27H16.86a.27.27,0,0,1,.27.27ZM15.21,14.96a1.934,1.934,0,1,1,1.371-.566,1.937,1.937,0,0,1-1.371.566ZM30.177,26.974a.27.27,0,0,1-.27.266H26.824a.266.266,0,0,1-.266-.266V21.407c0-1.465-.522-2.453-1.832-2.453a1.98,1.98,0,0,0-1.857,1.324,2.5,2.5,0,0,0-.119.883v5.812a.27.27,0,0,1-.27.27H19.4a.266.266,0,0,1-.266-.27c0-1.479.039-8.657,0-10.346a.266.266,0,0,1,.266-.27h3.076a.266.266,0,0,1,.27.27V17.9A3.6,3.6,0,0,1,26,16.1c2.379,0,4.166,1.556,4.166,4.905ZM22.75,17.935V17.9l-.025.039Zm-.025,0h.025V17.9Zm0,0h.025V17.9Zm0,0h.025V17.9Zm0,0h.025V17.9Zm0,0h.025V17.9Zm0,0h.025V17.9Zm0,0h.025V17.9Zm0,0h.025V17.9Zm0,0h.025V17.9Zm0,0h.025V17.9Zm0,0h.025V17.9Zm0,0h.025V17.9Zm0,0h.025V17.9Zm0,0h.025V17.9Z"
+                  transform="translate(-5.13 -3.77)"
+                  fill="#696969"
+                ></path>
+              </svg>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a
+              class="nav-link"
+              href="https://www.instagram.com/sattva.india/?hl=en"
+            >
+              <svg
+                id="instagram"
+                xmlns="http://www.w3.org/2000/svg"
+                width="25"
+                height="25"
+                viewBox="0 0 32 32"
+              >
+                <path
+                  id="Path_5627"
+                  data-name="Path 5627"
+                  d="M48,36H38a2,2,0,0,0-2,2V48a2,2,0,0,0,2,2H48a2,2,0,0,0,2-2V38A2,2,0,0,0,48,36ZM43,47a4,4,0,1,1,4-4A4,4,0,0,1,43,47Zm4.5-7.25a1.25,1.25,0,1,1,1.25-1.25A1.25,1.25,0,0,1,47.5,39.75Z"
+                  transform="translate(-27 -27)"
+                  fill="#696969"
+                ></path>
+                <circle
+                  id="Ellipse_449"
+                  data-name="Ellipse 449"
+                  cx="2"
+                  cy="2"
+                  r="2"
+                  transform="translate(14 14)"
+                  fill="#696969"
+                ></circle>
+                <path
+                  id="Path_5628"
+                  data-name="Path 5628"
+                  d="M16,0A16,16,0,1,0,32,16,16,16,0,0,0,16,0Zm9,21a4,4,0,0,1-4,4H11a4,4,0,0,1-4-4V11a4,4,0,0,1,4-4H21a4,4,0,0,1,4,4Z"
+                  fill="#696969"
+                ></path>
+              </svg>
+            </a>
+          </li>
+        </ul>
+        <ul class="navbar-nav my-lg-0 fw-bold font-link">
+          <li class="nav-item">
+            <a class="nav-link text-primary">
+              <img
+                class="img-responsive me-2"
+                src="./assets/images/at.svg"
+                width="20px"
+              />HELLO@SATTVA.COM</a
+            >
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-primary">
+              <img
+                class="img-responsive me-2"
+                src="./assets/images/phone.svg"
+                width="20px"
+              />+918527419630</a
+            >
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </nav>
+  <!-- header-main -->
+  <nav *ngIf="!isTokenAvailable" class="navbar navbar-light navbar-expand-lg">
+    <div class="container">
+      <a class="navbar-brand">
+        <img src="assets/images/sattvalogo.png" alt=""/></a>
+      <!-- search box -->
+      <!-- <form class="d-flex align-items-center">
+        <button class="d-flex align-items-center search-icon">
+          <img src="../../../assets/images/search-icon.svg" alt="">
+        </button>
+        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+      </form> -->
+      <!-- search box -->
+
+      <button
+        class="navbar-toggler toggle-btn-color"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+        (click)="isToggle()"
+      >
+        <span *ngIf="!navbarMenuToggle" class="navbar-toggler-icon"></span>
+        <img *ngIf="navbarMenuToggle" src="../../../assets/images/close-btn.svg">
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mb-2 mb-lg-0 ms-auto fw-bold font-link nav-center d-lg-flex d-none">
+          <li class="nav-item" *ngFor="let menu of navbarMenuList">
+            <a
+              class="nav-link active"
+              aria-current="page"
+              (click)="navigateToSpecificPage(menu.slug)"
+            >
+              {{ menu?.title }}
+            </a>
+          </li>
+          <li class="nav-item">
+            <a
+              class="nav-link active"
+              routerLink="home"
+              id="navbarDropdown"
+              role="button"
+              data-bs-toggle="dropdown"
+              aria-expanded="false"
+            >Home
+            </a>
+          </li>
+          <li class="nav-item">
+            <a
+              class="nav-link"
+              routerLink="funding"
+              id="navbarDropdown"
+              role="button"
+              data-bs-toggle="dropdown"
+              aria-expanded="false"
+            >Funding
+            </a>
+          </li>
+          <li class="nav-item">
+            <a
+              class="nav-link"
+              routerLink="/event-list"
+              id="navbarDropdown"
+              role="button"
+              data-bs-toggle="dropdown"
+              aria-expanded="false"
+            >Events
+            </a>
+          </li>
+
+          <li class="nav-item dropdown">
+            <a
+              class="nav-link dropdown-toggle"
+              routerLink="services"
+              id="navbarDropdown"
+              role="button"
+              data-bs-toggle="dropdown"
+              aria-expanded="false"
+            >Services
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <li><a class="dropdown-item">Action</a></li>
+              <li><a class="dropdown-item">Another action</a></li>
+              <li><hr class="dropdown-divider" /></li>
+              <li><a class="dropdown-item">Something else here</a></li>
+            </ul>
+          </li>
+          <li class="nav-item dropdown">
+            <a
+              class="nav-link dropdown-toggle"
+             
+              id="navbarDropdown"
+              role="button"
+              data-bs-toggle="dropdown"
+              aria-expanded="false"
+            >Resources
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <li><a class="dropdown-item">Action</a></li>
+              <li><a class="dropdown-item">Another action</a></li>
+              <li><hr class="dropdown-divider" /></li>
+              <li><a class="dropdown-item">Something else here</a></li>
+            </ul>
+          </li>
+
+          <li class="nav-item dropdown">
+            <a
+              class="nav-link dropdown-toggle"
+             
+              id="navbarDropdown"
+              role="button"
+              data-bs-toggle="dropdown"
+              aria-expanded="false"
+            >About Us
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <li><a class="dropdown-item">Action</a></li>
+              <li><a class="dropdown-item">Another action</a></li>
+              <li><hr class="dropdown-divider" /></li>
+              <li><a class="dropdown-item">Something else here</a></li>
+            </ul>
+          </li>
+        </ul>
+
+<!-- new navs for medium device -->
+<div class="d-flex">
+  <ul class="navbar-nav mb-2 mb-lg-0 m-auto fw-bold font-link nav-center d-lg-none">
+    <li class="nav-item" *ngFor="let menu of navbarMenuList">
+      <a
+        class="nav-link active"
+        aria-current="page"
+        (click)="navigateToSpecificPage(menu.slug)"
+      >
+        {{ menu?.title }}
+      </a>
+    </li>
+    <li class="nav-item mx-5">
+      <a
+        class="nav-link active"
+        routerLink="home"
+        id="navbarDropdown"
+        role="button"
+        data-bs-toggle="dropdown"
+        aria-expanded="false"
+      >
+        <span class="d-lg-none numbers">01</span> Home
+      </a>
+    </li>
+    <li class="nav-item mx-5">
+      <a
+        class="nav-link"
+        routerLink="funding"
+        id="navbarDropdown"
+        role="button"
+        data-bs-toggle="dropdown"
+        aria-expanded="false"
+      >
+      <span class="d-lg-none numbers">02</span> Funding
+      </a>
+    </li>
+    <li class="nav-item mx-5">
+      <a
+        class="nav-link"
+        routerLink="/event-list"
+        id="navbarDropdown"
+        role="button"
+        data-bs-toggle="dropdown"
+        aria-expanded="false"
+      >
+      <span class="d-lg-none numbers">03</span> Events
+      </a>
+    </li>
+
+    <li class="nav-item mx-5 dropdown">
+      <a
+        class="nav-link dropdown-toggle"
+        routerLink="services"
+        id="navbarDropdown"
+        role="button"
+        data-bs-toggle="dropdown"
+        aria-expanded="false"
+      >
+      <span class="d-lg-none numbers">04</span> Services
+      </a>
+      <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+        <li><a class="dropdown-item">Action</a></li>
+        <li><a class="dropdown-item">Another action</a></li>
+        <li><hr class="dropdown-divider" /></li>
+        <li><a class="dropdown-item">Something else here</a></li>
+      </ul>
+    </li>
+    <li class="nav-item mx-5 dropdown">
+      <a
+        class="nav-link dropdown-toggle"
+       
+        id="navbarDropdown"
+        role="button"
+        data-bs-toggle="dropdown"
+        aria-expanded="false"
+      >
+      <span class="d-lg-none numbers">05</span> Resources
+      </a>
+      <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+        <li><a class="dropdown-item">Action</a></li>
+        <li><a class="dropdown-item">Another action</a></li>
+        <li><hr class="dropdown-divider" /></li>
+        <li><a class="dropdown-item">Something else here</a></li>
+      </ul>
+    </li>
+
+    <li class="nav-item mx-5 dropdown">
+      <a
+        class="nav-link dropdown-toggle"
+       
+        id="navbarDropdown"
+        role="button"
+        data-bs-toggle="dropdown"
+        aria-expanded="false"
+      >
+      <span class="d-lg-none numbers">06</span> About Us
+      </a>
+      <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+        <li><a class="dropdown-item">Action</a></li>
+        <li><a class="dropdown-item">Another action</a></li>
+        <li><hr class="dropdown-divider" /></li>
+        <li><a class="dropdown-item">Something else here</a></li>
+      </ul>
+    </li>
+  </ul>
+</div>
+<!-- new navs end -->
+
+<div class="d-flex btn-width justify-content-center mt-lg-0 mt-2 mb-lg-0 mb-3">
+  <ng-container *ngIf="!isTokenAvailable">
+    <button *ngIf="!router.url.includes('login')"
+    [ngClass]="{'btn-primary py-2 px-4 text-white': router.url.includes('registration')}"
+      type="button"
+      class="btn me-2 fw-bold font-link text-primary"
+      (click)="navigateToSpecificPage('login')"
+    >
+      Login
+    </button>
+    <button *ngIf="!router.url.includes('registration')"
+      type="button"
+      class="btn btn-primary py-2 px-4 text-white"
+      (click)="navigateToSpecificPage('registration')"
+    >
+      Signup
+    </button>
+  </ng-container>
+  <ng-container *ngIf="isTokenAvailable">
+    <button
+      type="button"
+      class="btn btn-primary text-white"
+      (click)="logoutUser()"
+    >
+      Logout
+    </button>
+  </ng-container> 
+</div>
+      </div>
+    </div>
+  </nav>
+  <!-- nav -->
+  <!-- 2nd nav -->
+  <!-- <nav class="navbar navbar-expand-lg">
+    <div class="container">
+      <a class="navbar-brand"
+        ><img src="assets/images/logo2.png" alt=""
+      /></a>
+      <div class="position-relative h-25 w-50" style="">
+        <form class="" id="" style="">
+          <img
+            class="position-absolute"
+            src="assets/images/Vector.png"
+            alt=""
+            style="top: 18px; left: 5px"
+          />
+          <input
+            class="form-control ps-4 border-0"
+            style="background-color: #f3f9f5"
+            type="search"
+            placeholder="Search"
+            aria-label="Search"
+          />
+        </form>
+      </div>
+
+
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav ms-auto fw-bold font-link">
+          <li>
+            <img src="assets/images/hazal.png" alt="" />
+          </li>
+          <li class="nav-item dropdown">
+            <a
+              class="nav-link active dropdown-toggle"
+             
+              id="navbarDropdown"
+              role="button"
+              data-bs-toggle="dropdown"
+              aria-expanded="false"
+            >
+              Hazal Ozturk
+            </a>
+            <ul
+              class="w-100 dropdown-menu border border-0 text-secondary"
+              aria-labelledby="navbarDropdown"
+              style="left: -39px !important; width: 200px !important"
+            >
+              <li class="position-relative">
+                <input
+                  type="checkbox"
+                  class="position-absolute"
+                  style="top: -6px; left: 14px; background-color: #d9d9d9"
+                />
+                <a class="dropdown-item ms-4 text-secondary fs-12">
+                  Organization Profile
+                </a>
+              </li>
+              <li class="position-relative">
+                <input
+                  type="checkbox"
+                  class="position-absolute"
+                  style="top: -6px; left: 14px; background-color: #d9d9d9"
+                />
+                <a class="dropdown-item ms-4 text-secondary fs-12"
+                  >My Profile</a
+                >
+              </li>
+              <li class="position-relative">
+                <input
+                  type="checkbox"
+                  class="position-absolute"
+                  style="top: -6px; left: 14px; background-color: #d9d9d9"
+                />
+                <a class="dropdown-item ms-4 text-secondary fs-12"
+                  >Membership Benifits
+                </a>
+              </li>
+
+              <li><hr class="dropdown-divider" /></li>
+              <span class="ms-4 fw-normal text-dark fs-14">Account </span>
+              <li class="position-relative">
+                <input
+                  type="checkbox"
+                  class="position-absolute"
+                  style="top: -6px; left: 14px; background-color: #d9d9d9"
+                />
+                <a class="dropdown-item ms-4 text-secondary fs-12"
+                  >Setttings
+                </a>
+              </li>
+              <li class="position-relative">
+                <input
+                  type="checkbox"
+                  class="position-absolute"
+                  style="top: -6px; left: 14px; background-color: #d9d9d9"
+                />
+                <a class="dropdown-item ms-4 text-secondary fs-12">
+                  Help
+                </a>
+              </li>
+              <li class="position-relative">
+                <input
+                  type="checkbox"
+                  class="position-absolute"
+                  style="top: -6px; left: 14px; background-color: #d9d9d9"
+                />
+                <a class="dropdown-item ms-4 text-secondary fs-12"
+                  >Language
+                </a>
+              </li>
+              <li>
+                <hr class="dropdown-divider" />
+              </li>
+              <li class="position-relative">
+                <input
+                  type="checkbox"
+                  class="position-absolute"
+                  style="top: -6px; left: 14px; background-color: #d9d9d9"
+                />
+                <a class="dropdown-item ms-4 text-secondary fs-12"
+                  >Sign out
+                </a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav> -->
+
+  <!-- search bar header -->
+  <nav *ngIf="isTokenAvailable" class="navbar navbar-light bg-white navbar-expand-lg">
+    <div class="container">
+      <a class="navbar-brand">
+        <img src="assets/images/logo2.png" alt=""/></a>
+
+      <form class="d-flex align-items-center">
+        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+      </form>
+
+      <button
+        class="navbar-toggler toggle-btn-color"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+        (click)="isToggle()"
+      >
+        <span *ngIf="!navbarMenuToggle" class="navbar-toggler-icon"></span>
+        <img *ngIf="navbarMenuToggle" src="../../../assets/images/close-btn.svg">
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mb-2 mb-lg-0 ms-auto fw-bold font-link nav-center d-lg-flex d-none">
+          <li class="nav-item" *ngFor="let menu of navbarMenuList">
+            <a
+              class="nav-link active"
+              aria-current="page"
+              (click)="navigateToSpecificPage(menu.slug)"
+            >
+              {{ menu?.title }}
+            </a>
+          </li>
+          <li class="nav-item">
+            <a
+              class="nav-link "
+              routerLink="home"
+              id="navbarDropdown"
+              role="button"
+              data-bs-toggle="dropdown"
+              aria-expanded="false"
+          >Home
+            </a>
+          </li>
+          <li class="nav-item">
+            <a
+              class="nav-link"
+              routerLink="funding"
+              id="navbarDropdown"
+              role="button"
+              data-bs-toggle="dropdown"
+              aria-expanded="false"
+            >Funding
+            </a>
+          </li>
+          <li class="nav-item">
+            <a
+              class="nav-link"
+              routerLink="/event-list"
+              id="navbarDropdown"
+              role="button"
+              data-bs-toggle="dropdown"
+              aria-expanded="false"
+            >Events
+            </a>
+          </li>
+
+          <li class="nav-item dropdown">
+            <a
+              class="nav-link dropdown-toggle"
+              routerLink="services"
+              id="navbarDropdown"
+              role="button"
+              data-bs-toggle="dropdown"
+              aria-expanded="false"
+            >Services
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <li><a class="dropdown-item">Action</a></li>
+              <li><a class="dropdown-item">Another action</a></li>
+              <li><hr class="dropdown-divider" /></li>
+              <li><a class="dropdown-item">Something else here</a></li>
+            </ul>
+          </li>
+          <li class="nav-item dropdown">
+            <a
+              class="nav-link dropdown-toggle"
+             
+              id="navbarDropdown"
+              role="button"
+              data-bs-toggle="dropdown"
+              aria-expanded="false"
+            >Resources
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <li><a class="dropdown-item">Action</a></li>
+              <li><a class="dropdown-item">Another action</a></li>
+              <li><hr class="dropdown-divider" /></li>
+              <li><a class="dropdown-item">Something else here</a></li>
+            </ul>
+          </li>
+
+          <li class="nav-item dropdown">
+            <a
+              class="nav-link dropdown-toggle"
+             
+              id="navbarDropdown"
+              role="button"
+              data-bs-toggle="dropdown"
+              aria-expanded="false"
+            >About Us
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <li><a class="dropdown-item">Action</a></li>
+              <li><a class="dropdown-item">Another action</a></li>
+              <li><hr class="dropdown-divider" /></li>
+              <li><a class="dropdown-item">Something else here</a></li>
+            </ul>
+          </li>
+        </ul>
+        <ul class="navbar-nav ms-2 fw-bold font-link">
+          <li class="m-auto">
+            <img class="image-cropper" [src]="loginData?.file?loginData?.file:'/assets/images/default-image.png'" alt="" />
+          </li>
+          <li class="nav-item dropdown p-1">
+            <a
+              class="nav-link active dropdown-toggle text-truncate"
+             
+              id="navbarDropdown"
+              role="button"
+              data-bs-toggle="dropdown"
+              aria-expanded="false"
+            >
+            {{loginData?.firstName}}
+            </a>
+            <ul
+              class="w-100 dropdown-menu border border-0 text-secondary"
+              aria-labelledby="navbarDropdown"
+              style="left: -39px !important; width: 200px !important"
+            >
+              <li class="position-relative">
+                <a class="dropdown-item ms-4 text-secondary box fs-12" [routerLink]="['/ngo-landing']">
+                  Organization Profile
+                </a>
+              </li>
+              <li class="position-relative">
+                <a class="dropdown-item ms-4 text-secondary box fs-12" [routerLink]="['/user-profile']" 
+                  >My Profile</a
+                >
+              </li>
+              <li class="position-relative">
+                <a class="dropdown-item ms-4 text-secondary box fs-12"
+                  >Membership Benifits
+                </a>
+              </li>
+              <li>
+                <hr class="dropdown-divider" />
+              </li>
+              <li class="position-relative">
+                <a class="dropdown-item ms-4 text-secondary box fs-12" (click)="logoutUser()"
+                  >Sign out
+                </a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+</header>

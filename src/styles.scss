@@ -1,0 +1,209 @@
+/*!
+ * Bootstrap v5.1.3 (https://getbootstrap.com/)
+ * Copyright 2011-2021 The Bootstrap Authors
+ * Copyright 2011-2021 Twitter, Inc.
+ * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
+ */
+
+// scss-docs-start import-stack
+// Configuration
+@import "scss/functions";
+@import "scss/variables";
+@import "scss/mixins";
+@import "scss/utilities";
+
+// Layout & components
+@import "scss/root";
+@import "scss/reboot";
+@import "scss/type";
+@import "scss/images";
+@import "scss/containers";
+@import "scss/grid";
+@import "scss/tables";
+@import "scss/forms";
+@import "scss/buttons";
+@import "scss/transitions";
+@import "scss/dropdown";
+@import "scss/button-group";
+@import "scss/nav";
+@import "scss/navbar";
+@import "scss/card";
+@import "scss/accordion";
+@import "scss/breadcrumb";
+@import "scss/pagination";
+@import "scss/badge";
+@import "scss/alert";
+@import "scss/progress";
+@import "scss/list-group";
+@import "scss/close";
+@import "scss/toasts";
+@import "scss/modal";
+@import "scss/tooltip";
+@import "scss/popover";
+@import "scss/carousel";
+@import "scss/spinners";
+@import "scss/offcanvas";
+@import "scss/placeholders";
+// Helpers
+@import "scss/helpers";
+
+// Utilities
+@import "scss/utilities/api";
+
+// scss-docs-end import-stack
+@import url("//fonts.googleapis.com/css?family=Rubik");
+
+body {
+  height: 100vh;
+  background-color: #f5f7f3;
+  font-family: "Rubik", sans-serif;
+  overflow-x: hidden;
+}
+.rubik{
+  font-family:"rubik"!important;
+}
+.ps-relative {
+  position: relative;
+  z-index: 99;
+}
+
+.form-floating::placeholder {
+  /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: #aaaaaa;
+  opacity: 1; /* Firefox */
+}
+
+.form-floating:-ms-input-placeholder {
+  /* Internet Explorer 10-11 */
+  color: #aaaaaa;
+}
+
+.form-floating::-ms-input-placeholder {
+  /* Microsoft Edge */
+  color: #aaaaaa;
+}
+
+.eye {
+  position: relative;
+}
+
+.eye button {
+  border: none;
+  background: none;
+  position: absolute;
+  top: 14px;
+  right: 32px;
+}
+
+.error-text {
+  font-size: 0.8em;
+}
+
+.container {
+  max-width: 1280px;
+}
+.hand-cursor {
+  cursor: pointer;
+}
+
+:root {
+  --font-link-size: 12px;
+}
+
+.btn {
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 14px;
+}
+// .subTitle {
+//   font-size: 12px !important;
+//   margin-bottom: 0.5rem;
+// }
+
+//font size
+.fs-10 {
+  font-size: 0.625rem;
+}
+.fs-11 {
+  font-size: 0.6875rem;
+}
+.fs-12 {
+  font-size: 0.75rem;
+}
+.fs-14 {
+  font-size: 0.875rem;
+}
+
+//font-family
+
+.fst-rubik {
+  font-family: "Rubik", sans-serif !important;
+}
+
+.greenButton:hover {
+  transition: 0s;
+  box-shadow: 2px 2px 1px #ccc;
+  transform: scale(1.01);
+}
+.nav-item > a {
+  color: #333;
+}
+.nav-item > a:hover,
+.nav-item > .active {
+  color: green;
+}
+
+.btn-primary {
+  color: white !important;
+}
+
+.primary-outlined {
+  border: 1px solid green;
+}
+.text-ellipsis--2 {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  // Addition lines for 2 line or multiline ellipsis
+  display: -webkit-box !important;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  white-space: normal;
+}
+
+.btn-close {
+  background: url(/assets/images/close-btn.svg);
+  opacity: 1;
+  margin-left: 1rem;
+}
+.custom-button {
+  background: url(/assets/images/close-btn.svg) no-repeat !important;
+  // height: 58px;
+  min-width: 37px !important;
+}
+
+// .cdk-overlay-pane.my-dialog {
+//   position: relative!important;
+// }
+// .close.mat-button {
+//   position: absolute;
+//   top: 0;
+//   right: 0;
+//   padding: 5px;
+//   line-height: 14px;
+//   min-width: auto;
+// }
+.wechat > img {
+  position: fixed;
+
+  z-index: 10000 !important;
+  right: 12rem;
+  bottom: 0;
+}
+
+.bg-secondary {
+  border-color: rgba(var(--bs-secondary-rgb), var(--bs-bg-opacity)) !important;
+}
+
+.form-floating > label {
+  color: #AAAAAA !important;
+}

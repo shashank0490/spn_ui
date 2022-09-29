@@ -1,0 +1,88 @@
+<div class="w-100 d-flex justify-content-center " >
+    <div class="" style="width: 24rem;">
+        <div class="card-body mt-2 lh-sm ">
+            <div class="row">
+                <div class="col-10">
+                    <h5 class="text-dark">Add User</h5>
+                    <p class="text-secondary" style="font-size: 10px;">Lorem, ipsum dolor sit amet consectetur
+                        adipisicing elit. Ad magni dolorum aut voluptate dolore.
+                    </p>
+                </div>
+                <div class="col">
+                    <img (click)="closeDialog()" src="/assets/images/cross.svg" alt="" srcset="">
+                </div>
+            </div>
+            <div class="row">
+                <div class=" ">
+                    <form class=" p-2" [formGroup]="profileForm">
+                        <div class="form-floating mb-2">
+                            <input appAlphabetOnly type="text" class="form-control" id="floatingInput"
+                                aria-describedby="emailHelp" appAlphabetOnly placeholder="Full Name*"
+                                formControlName="firstName">
+                            <label for="floatingInput">Full Name</label>
+                            <div *ngIf="(profileFormControl.firstName.invalid) && (profileFormControl.firstName.dirty || profileFormControl.firstName.touched)"
+                                class="text-danger error-text" role="alert">
+                                <div *ngIf="profileFormControl.firstName.errors?.required" class="text-danger error-text"
+                                    role="alert">Full Name is required</div>
+                            </div>
+                        </div>
+                        <div class="form-floating mb-3">
+                            <select class="form-select" id="floatingSelect"
+                                aria-label="Floating label select example" formControlName="designationId">
+                                <option *ngFor="let item of designations" [value]="item['id']">{{item['name']}}
+                                </option>
+                            </select>
+                            <label for="floatingSelect">Designation</label>
+                            <div *ngIf="(profileFormControl.designationId.invalid ) && (profileFormControl.designationId.dirty || profileFormControl.designationId.touched)"
+                                class="text-danger error-text" role="alert">
+                                Please select a designation
+                            </div>
+                        </div>
+                        <div class="form-floating mb-3">
+                            <input type="email" class="form-control" id="floatingInput" aria-describedby="emailHelp"
+                                placeholder="Enter Personal Email ID" formControlName="emailId">
+                            <label for="floatingInput">Enter Personal Email ID</label>
+                            <div
+                                *ngIf="(profileFormControl.emailId.invalid) && (profileFormControl.emailId.dirty || profileFormControl.emailId.touched)">
+                                <div *ngIf="profileFormControl.emailId.errors?.required"
+                                    class="text-danger error-text" role="alert">Email is required</div>
+                                <div *ngIf="profileFormControl.emailId.errors?.pattern"
+                                    class="text-danger error-text" role="alert">Invalid Email</div>
+                            </div>
+                        </div>
+
+                        <div class="form-floating contact">
+                            <div class="form-group mb-3 d-flex" formGroupName="contactNo">
+                                <!-- <label for="contactNo">Contact Number</label> -->
+                                <select class="rounded country-code px-2 text-success fw-bold" id="floatingSelect"
+                                    id="contact" style="width: 90px !important;"
+                                    aria-label="Floating label select example" formControlName="countryCode">
+                                    <option *ngFor="let item of countryCodes" [value]="item.dial_code">
+                                        {{item['dial_code']}}</option>
+                                </select>
+                                <input formControlName="number" type="number" class="form-control border-0 px-0"
+                                    id="ec-mobile-number" aria-describedby="emailHelp" placeholder="Contact*" />
+                            </div>
+                            <div *ngIf="(profileFormControl.contactNo.invalid ) && (profileFormControl.contactNo.dirty || profileFormControl.contactNo.touched)"
+                                class="text-danger error-text" role="alert">
+                                <div *ngIf="contactFormControl.number.errors?.required"
+                                    class="text-danger error-text" role="alert">Phone Number is required</div>
+                                <div *ngIf="contactFormControl.number.errors?.minlength"
+                                    class="text-danger error-text" role="alert">Minimum 6 digit</div>
+                            </div>
+                        </div>
+                        <div class="row ">
+                            <div class="col">
+                                <button [disabled]="profileForm.invalid" [ngClass]="{'bg-secondary':profileForm.invalid,'bg-primary':profileForm.valid}"  
+                                 (click)="closeDialogWithData(this.profileForm.value)" type="submit" class="btn btn-secondary py-3 text-white w-100 mt-3">
+                                    Invite Team Member
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>

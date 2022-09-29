@@ -1,0 +1,16 @@
+<ng-container *ngFor="let item of people;let i=index">
+    <div class="d-flex align-items-center p-3">
+        <div class="profile me-3">
+            <img [src]='"assets/images/"+item.image+".jpg"' alt="" class="profile-img rounded-circle">
+        </div>
+        <div>
+            <h6 class="fw-bold">{{item.peopleHeading}}</h6>
+            <div class="d-flex">
+                <p class="mb-0">{{item.peopleSubheading}}</p>
+                <p class="dot ms-4 mb-0">{{item.peopleEmail}}</p>
+                <p class="dot ms-4 mb-0">{{item.peoplePhone}}</p>
+            </div>
+        </div>
+    </div>
+    <hr *ngIf="people.length != i+1">
+</ng-container>
